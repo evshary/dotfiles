@@ -1,6 +1,6 @@
 dotfiles
 ========
-This is my dotfiles setting
+This is my dotfiles settin.
 You can use it to set the tools below
 
 ##vim:
