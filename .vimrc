@@ -5,6 +5,7 @@ nmap <F7> :TrinityToggleNERDTree<CR>
 
 "tab是4個空白
 set tabstop=4
+set expandtab
 "set list
 "set listchars=tab:----
 
