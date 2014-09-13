@@ -1,8 +1,3 @@
-"nmap <F8> :TrinityToggleAll<CR>
-"nmap <F5> :TrinityToggleSourceExplorer<CR>
-"nmap <F6> :TrinityToggleTagList<CR>
-"nmap <F7> :TrinityToggleNERDTree<CR>
-
 "tab是4個空白
 set tabstop=4
 set expandtab
