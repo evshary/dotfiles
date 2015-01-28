@@ -1,8 +1,3 @@
-nmap <F8> :TrinityToggleAll<CR>
-nmap <F5> :TrinityToggleSourceExplorer<CR>
-nmap <F6> :TrinityToggleTagList<CR>
-nmap <F7> :TrinityToggleNERDTree<CR>
-
 "tab是4個空白
 set tabstop=4
 set expandtab
@@ -90,8 +85,7 @@ if has('vim_starting')
     set runtimepath+=~/.vim/bundle/neobundle.vim/
 endif
 
-call neobundle#rc(expand('~/.vim/bundle/'))
-
+call neobundle#begin(expand('~/.vim/bundle/'))
 " Let NeoBundle manage NeoBundle
 NeoBundleFetch 'Shougo/neobundle.vim'
 
@@ -110,7 +104,7 @@ NeoBundle 'BBCode--Dahn'
 NeoBundle 'plasticboy/vim-markdown'
 NeoBundle 'bling/vim-airline'
 NeoBundle 'tpope/vim-fugitive'
-
+call neobundle#end()
 filetype plugin indent on     " Required!
 
 "
