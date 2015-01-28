@@ -80,6 +80,9 @@ set noswapfile
 set visualbell
 set noerrorbells
 
+"讓貼上不會跑掉格式
+set paste
+
 let Tlist_Ctags_Cmd="/usr/local/bin/ctags"
 
 if has('vim_starting')
