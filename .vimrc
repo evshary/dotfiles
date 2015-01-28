@@ -1,3 +1,8 @@
+nmap <F8> :TrinityToggleAll<CR>
+nmap <F5> :TrinityToggleSourceExplorer<CR>
+nmap <F6> :TrinityToggleTagList<CR>
+nmap <F7> :TrinityToggleNERDTree<CR>
+
 "tab是4個空白
 set tabstop=4
 set expandtab
@@ -76,7 +81,8 @@ set visualbell
 set noerrorbells
 
 "讓貼上不會跑掉格式
-set paste
+set pastetoggle=<F2>
+set nopaste
 
 let Tlist_Ctags_Cmd="/usr/local/bin/ctags"
 
@@ -85,7 +91,8 @@ if has('vim_starting')
     set runtimepath+=~/.vim/bundle/neobundle.vim/
 endif
 
-call neobundle#begin(expand('~/.vim/bundle/'))
+call neobundle#rc(expand('~/.vim/bundle/'))
+
 " Let NeoBundle manage NeoBundle
 NeoBundleFetch 'Shougo/neobundle.vim'
 
@@ -104,7 +111,7 @@ NeoBundle 'BBCode--Dahn'
 NeoBundle 'plasticboy/vim-markdown'
 NeoBundle 'bling/vim-airline'
 NeoBundle 'tpope/vim-fugitive'
-call neobundle#end()
+
 filetype plugin indent on     " Required!
 
 "
