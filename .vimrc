@@ -1,9 +1,10 @@
-"                   .__                                                     
+" evshary           .__                                                     
 "   _______  _______|  |__ _____ _______ ___.__.                            
 " _/ __ \  \/ /  ___/  |  \\__  \\_  __ <   |  |                            
 " \  ___/\   /\___ \|   Y  \/ __ \|  | \/\___  |                            
 "  \___  >\_//____  >___|  (____  /__|   / ____|                            
 "      \/         \/     \/     \/       \/     
+" Tohsaka Rin
 " ___________    .__                    __             __________.__        
 " \__    ___/___ |  |__   ___________  |  | _______    \______   \__| ____  
 "   |    | /  _ \|  |  \ /  ___/\__  \ |  |/ /\__  \    |       _/  |/    \ 
@@ -11,20 +12,38 @@
 "   |____| \____/|___|  /____  >(____  /__|_ \(____  /  |____|_  /__|___|  /
 "                     \/     \/      \/     \/     \/          \/        \/ 
 " Author: evshary
+" Mail: evshary@gmail.com
 " Date: 2015-04-01
 " Updated:
 " 2015-04-01 Tainan: Complete architecture of vimrc
+" 2015-04-02 Tainan: Adjust the windows size and title
 
 " mapping
 autocmd FileType python map <buffer> <F4> :call Flake8()<CR>
 
 nmap <F5> :TrinityToggleSourceExplorer<CR>
+"nmap <F5> :SrcExplToggle<CR>
 nmap <F6> :TrinityToggleTagList<CR>
+"nmap <F6> :TlistToggle<CR>
 nmap <F7> :TrinityToggleNERDTree<CR>
 nmap <F8> :TrinityToggleAll<CR>
 
+" :set is for setting options, :let for assigning a value to a variable.
 " 因為mac的預設ctags有問題，所以要另外設定才能使用taglist
-let Tlist_Ctags_Cmd="/usr/local/bin/ctags"
+if has("unix")
+  let s:uname = system("uname -s")
+  if s:uname == "Darwin"
+    " Do Mac stuff here
+    let Tlist_Ctags_Cmd="/usr/local/bin/ctags"
+  endif
+endif
+
+" You should adjust the parameters in trinity yourself
+let g:SrcExpl_winHeight = 8
+let g:Tlist_WinWidth = 20
+
+"自動fold C code
+set foldmethod=syntax
 
 " tab是4個空白
 set tabstop=4

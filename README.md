@@ -9,6 +9,14 @@ neobundle github: https://github.com/Shougo/neobundle.vim
 ```bash
 curl https://raw.githubusercontent.com/Shougo/neobundle.vim/master/bin/install.sh | sh
 ```
+NOTE:
+You should adjust the windows size of Trinity yourself
+```bash
+# about 103
+let g:Tlist_WinWidth = 23
+# about 127
+let g:SrcExpl_winHeight = 8
+```
 
 ##zsh:
 You need to install zsh and oh-my-zsh first
