@@ -49,4 +49,4 @@ source $ZSH/oh-my-zsh.sh
 # Customize to your needs...
 export PATH=$PATH:/usr/local/csl/arm-2012.03/bin:/bin:/usr/bin:/usr/X11R6/bin:/usr/local/bin
 
-cat .rsc/rin.ans
+cat ~/.rsc/rin.ans
