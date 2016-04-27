@@ -38,6 +38,34 @@ if has("unix")
   endif
 endif
 
+" cscope
+cs add cscope.out
+nnoremap <leader>fa :call cscope#findInteractive(expand('<cword>'))<CR>
+nnoremap <leader>l :call ToggleLocationList()<CR>
+" s: Find this C symbol
+nnoremap  <leader>fs :call cscope#find('s', expand('<cword>'))<CR>
+" g: Find this definition
+nnoremap  <leader>fg :call cscope#find('g', expand('<cword>'))<CR>
+" d: Find functions called by this function
+nnoremap  <leader>fd :call cscope#find('d', expand('<cword>'))<CR>
+" c: Find functions calling this function
+nnoremap  <leader>fc :call cscope#find('c', expand('<cword>'))<CR>
+" t: Find this text string
+nnoremap  <leader>ft :call cscope#find('t', expand('<cword>'))<CR>
+" e: Find this egrep pattern
+nnoremap  <leader>fe :call cscope#find('e', expand('<cword>'))<CR>
+" f: Find this file
+nnoremap  <leader>ff :call cscope#find('f', expand('<cword>'))<CR>
+" i: Find files #including this file
+nnoremap  <leader>fi :call cscope#find('i', expand('<cword>'))<CR>
+
+map <F9>  : !ctags -R<CR>
+map <F10> : !cscope -Rbkq<CR>
+map <F12> : !rm tags cscope*<CR>
+nmap <C-l> :exec "ts"<CR>
+nmap <C-n> :exec "tnext"<CR>
+nmap <C-p> :exec "tprevious"<CR>
+
 " You should adjust the parameters in trinity yourself
 let g:SrcExpl_winHeight = 8
 let g:Tlist_WinWidth = 20
@@ -189,6 +217,8 @@ NeoBundle 'nvie/vim-flake8'
 " zn 全部展開 
 " zN 全部收起
 NeoBundle 'python_fold'
+" cscope
+NeoBundle 'vim-scripts/cscope.vim' 
 " -------------my plugin----------------
 
 call neobundle#end()
