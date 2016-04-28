@@ -65,6 +65,8 @@ map <F12> : !rm tags cscope*<CR>
 nmap <C-l> :exec "ts"<CR>
 nmap <C-n> :exec "tnext"<CR>
 nmap <C-p> :exec "tprevious"<CR>
+nmap <C-h> :exec "match Todo /".expand('<cword>')."/"<CR>
+nmap <C-c> :exec "match None /".expand('<cword>')."/"<CR>
 
 " You should adjust the parameters in trinity yourself
 let g:SrcExpl_winHeight = 8
@@ -114,6 +116,8 @@ set ruler
 set cursorline
 " 行號
 set nu
+" 讓搜尋的字變色
+set hlsearch
 
 " highlight current line
 " gui => gvim
