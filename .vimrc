@@ -65,8 +65,13 @@ map <F12> : !rm tags cscope*<CR>
 nmap <C-l> :exec "ts"<CR>
 nmap <C-n> :exec "tnext"<CR>
 nmap <C-p> :exec "tprevious"<CR>
-nmap <C-h> :exec "match Todo /".expand('<cword>')."/"<CR>
-nmap <C-c> :exec "match None /".expand('<cword>')."/"<CR>
+" We should used \<XYZ\> to prompt vim that 
+" we only want the word XYZ in string \W(XYZ)\W
+" However, exec string needs \\ to escape \
+nmap <C-h> :exec "match Todo /\\<".expand('<cword>')."\\>/"<CR>
+nmap <C-j> :exec "2match Error /\\<".expand('<cword>')."\\>/"<CR>
+nmap <S-h> :exec "match None /\\<".expand('<cword>')."\\>/"<CR>
+nmap <S-j> :exec "2match None /\\<".expand('<cword>')."\\>/"<CR>
 
 " You should adjust the parameters in trinity yourself
 let g:SrcExpl_winHeight = 8
