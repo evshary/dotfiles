@@ -58,6 +58,8 @@ nnoremap  <leader>fe :call cscope#find('e', expand('<cword>'))<CR>
 nnoremap  <leader>ff :call cscope#find('f', expand('<cword>'))<CR>
 " i: Find files #including this file
 nnoremap  <leader>fi :call cscope#find('i', expand('<cword>'))<CR>
+" make cscope silent
+let g:cscope_silent = 1
 
 map <F9>  : !ctags -R<CR>
 map <F10> : !cscope -Rbkq<CR>
@@ -70,8 +72,10 @@ nmap <C-p> :exec "tprevious"<CR>
 " However, exec string needs \\ to escape \
 nmap <C-h> :exec "match Todo /\\<".expand('<cword>')."\\>/"<CR>
 nmap <C-j> :exec "2match Error /\\<".expand('<cword>')."\\>/"<CR>
-nmap <S-h> :exec "match None /\\<".expand('<cword>')."\\>/"<CR>
-nmap <S-j> :exec "2match None /\\<".expand('<cword>')."\\>/"<CR>
+nmap <C-k> :exec "match None /\\<".expand('<cword>')."\\>/"<CR>
+nmap <C-l> :exec "2match None /\\<".expand('<cword>')."\\>/"<CR>
+nnoremap K   :tabnext<CR>
+nnoremap J   :tabprev<CR>
 
 " You should adjust the parameters in trinity yourself
 let g:SrcExpl_winHeight = 8
