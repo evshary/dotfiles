@@ -19,12 +19,12 @@
 " 2015-04-02 Tainan: Adjust the windows size and title
 
 " mapping
+" if python, F4 = call flake8
 autocmd FileType python map <buffer> <F4> :call Flake8()<CR>
 
+" Trinity mapping
 nmap <F5> :TrinityToggleSourceExplorer<CR>
-"nmap <F5> :SrcExplToggle<CR>
 nmap <F6> :TrinityToggleTagList<CR>
-"nmap <F6> :TlistToggle<CR>
 nmap <F7> :TrinityToggleNERDTree<CR>
 nmap <F8> :TrinityToggleAll<CR>
 
@@ -37,6 +37,10 @@ if has("unix")
     let Tlist_Ctags_Cmd="/usr/local/bin/ctags"
   endif
 endif
+
+" ctags
+" open definition in new tabs
+map <C-\> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
 
 " cscope
 cs add cscope.out
@@ -70,10 +74,22 @@ nmap <C-p> :exec "tprevious"<CR>
 " We should used \<XYZ\> to prompt vim that 
 " we only want the word XYZ in string \W(XYZ)\W
 " However, exec string needs \\ to escape \
-nmap <C-h> :exec "match Todo /\\<".expand('<cword>')."\\>/"<CR>
-nmap <C-j> :exec "2match Error /\\<".expand('<cword>')."\\>/"<CR>
-nmap <C-k> :exec "match None /\\<".expand('<cword>')."\\>/"<CR>
-nmap <C-l> :exec "2match None /\\<".expand('<cword>')."\\>/"<CR>
+nmap <C-h> :exec 'call MatchPattern("Todo")'<CR>
+nmap <C-j> :exec 'call MatchPattern("Error")'<CR>
+function! MatchPattern(name)
+    let var = ""
+    for i in getmatches()
+        if i['pattern'] == "\\<".expand('<cword>')."\\>" && i['group'] == a:name
+            let var = i['id']
+            break
+        endif
+    endfor
+    if var != ""
+        call matchdelete(var)
+    else
+        call matchadd(a:name, "\\<".expand('<cword>')."\\>", 10)
+    endif
+endfunction
 nnoremap K   :tabnext<CR>
 nnoremap J   :tabprev<CR>
 
