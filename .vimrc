@@ -66,8 +66,7 @@ nnoremap  <leader>fi :call cscope#find('i', expand('<cword>'))<CR>
 let g:cscope_silent = 1
 
 map <F9>  : !ctags -R<CR>
-map <F10> : !cscope -Rbkq<CR>
-map <F12> : !rm tags cscope*<CR>
+map <F12> : !rm tags<CR>
 nmap <C-l> :exec "ts"<CR>
 nmap <C-n> :exec "tnext"<CR>
 nmap <C-p> :exec "tprevious"<CR>
@@ -76,6 +75,7 @@ nmap <C-p> :exec "tprevious"<CR>
 " However, exec string needs \\ to escape \
 nmap <C-h> :exec 'call MatchPattern("Todo")'<CR>
 nmap <C-j> :exec 'call MatchPattern("Error")'<CR>
+nmap <C-k> :exec 'call clearmatches()'<CR>:exec 'noh'<CR>
 function! MatchPattern(name)
     let var = ""
     for i in getmatches()
@@ -90,6 +90,7 @@ function! MatchPattern(name)
         call matchadd(a:name, "\\<".expand('<cword>')."\\>", 10)
     endif
 endfunction
+
 nnoremap K   :tabnext<CR>
 nnoremap J   :tabprev<CR>
 
