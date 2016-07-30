@@ -43,7 +43,6 @@ endif
 map <C-\> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
 
 " cscope
-cs add cscope.out
 nnoremap <leader>fa :call cscope#findInteractive(expand('<cword>'))<CR>
 nnoremap <leader>l :call ToggleLocationList()<CR>
 " s: Find this C symbol
