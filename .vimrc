@@ -41,6 +41,11 @@ endif
 " ctags
 " open definition in new tabs
 map <C-\> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
+nmap <C-L>l :exec "ts"<CR>
+nmap <C-L>n :exec "tnext"<CR>
+nmap <C-L>p :exec "tprevious"<CR>
+map <F9>  : !ctags -R<CR>
+map <F12> : !rm tags<CR>
 
 " cscope
 nnoremap <leader>fa :call cscope#findInteractive(expand('<cword>'))<CR>
@@ -64,11 +69,12 @@ nnoremap  <leader>fi :call cscope#find('i', expand('<cword>'))<CR>
 " make cscope silent
 let g:cscope_silent = 1
 
-map <F9>  : !ctags -R<CR>
-map <F12> : !rm tags<CR>
-nmap <C-l> :exec "ts"<CR>
-nmap <C-n> :exec "tnext"<CR>
-nmap <C-p> :exec "tprevious"<CR>
+" CtrlSF
+nmap <C-F>s :CtrlSF<CR>
+
+" CtrlP
+let g:ctrlp_map = '<c-f>f'
+
 " We should used \<XYZ\> to prompt vim that 
 " we only want the word XYZ in string \W(XYZ)\W
 " However, exec string needs \\ to escape \
@@ -96,6 +102,14 @@ nnoremap J   :tabprev<CR>
 " You should adjust the parameters in trinity yourself
 let g:SrcExpl_winHeight = 8
 let g:Tlist_WinWidth = 20
+
+" gitgutter settings
+" update gitgutter every 250ms
+set updatetime=250
+
+" easy motion settings
+" use ',w' or ',b' to jump word or back
+let g:EasyMotion_leader_key = ','
 
 "自動fold C code
 set foldmethod=syntax
@@ -229,7 +243,8 @@ NeoBundle 'othree/html5.vim'
 NeoBundle 'plasticboy/vim-markdown'
 NeoBundle 'bling/vim-airline'
 " git plugin for vim
-" Gdiff, Gstatus...
+" 常用:Gdiff(看本文件被改的情況), :Gstatus(看有哪些被改),
+" :Gread(回到上次checkout的情況), :Gblame(看每一行是誰改的)
 " Usage: https://github.com/tpope/vim-fugitive
 NeoBundle 'tpope/vim-fugitive'
 " A (G)Vim plugin which build the trinity of Source Explorer, TagList and NERD
@@ -248,6 +263,32 @@ NeoBundle 'nvie/vim-flake8'
 NeoBundle 'python_fold'
 " cscope
 NeoBundle 'vim-scripts/cscope.vim' 
+" html/xml跳轉, use %
+NeoBundle 'vim-scripts/matchit.zip'
+
+" DON'T USE!!!! it will cause open tab too slowly
+" make rgb(x,x,x) or #00ff colorize 
+" NeoBundle 'lilydjwg/colorizer'
+
+" 用git看改了哪幾行
+" 用[c, ]c可以上下跳轉
+NeoBundle 'airblade/vim-gitgutter'
+" vim easymotion
+NeoBundle 'easymotion/vim-easymotion'
+" able to select multiple cursors (這是神器啊Orz)
+" C-n C-p C-x: 選擇下個/上個/跳過同樣的字詞，然後再按c就可以重命名
+" 用vip選擇某個block，然後再按C-n加上i就可以在前面插入文字
+" 備註：如果是用vip加上J，代表把這個block的換行拿掉
+NeoBundle 'terryma/vim-multiple-cursors'
+" 可以用來快速搜尋某個單詞
+" :CtrlSF [pattern]後，會跳出搜尋結果視窗
+" p可以preview，t可以在新頁開啟，T可以新頁開啟並保留window，q為離開
+" C-j, C-k: 上下移動cursor
+NeoBundle 'dyng/ctrlsf.vim'
+" 快速開啟file
+" C-p可以開list，要離開要用esc
+" C-j, C-k: 上下移動  C-t: 新分頁開啟
+NeoBundle 'ctrlpvim/ctrlp.vim'
 " -------------my plugin----------------
 
 call neobundle#end()
