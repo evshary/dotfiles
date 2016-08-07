@@ -281,12 +281,12 @@ NeoBundle 'easymotion/vim-easymotion'
 " 備註：如果是用vip加上J，代表把這個block的換行拿掉
 NeoBundle 'terryma/vim-multiple-cursors'
 " 可以用來快速搜尋某個單詞
-" :CtrlSF [pattern]後，會跳出搜尋結果視窗
+" :CtrlSF [pattern]後，會跳出搜尋結果視窗(這邊改成C-f + s)
 " p可以preview，t可以在新頁開啟，T可以新頁開啟並保留window，q為離開
 " C-j, C-k: 上下移動cursor
 NeoBundle 'dyng/ctrlsf.vim'
 " 快速開啟file
-" C-p可以開list，要離開要用esc
+" C-p(我這邊改成C-f + f)可以開list，要離開要用esc
 " C-j, C-k: 上下移動  C-t: 新分頁開啟
 NeoBundle 'ctrlpvim/ctrlp.vim'
 " -------------my plugin----------------
