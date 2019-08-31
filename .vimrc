@@ -109,7 +109,11 @@ set updatetime=250
 
 " easy motion settings
 " use ',w' or ',b' to jump word or back
-let g:EasyMotion_leader_key = ','
+let g:EasyMotion_leader_key = '\'
+
+" vim-markdown
+" Don't fold markdown in default
+let g:vim_markdown_folding_disabled = 1
 
 "自動fold C code
 set foldmethod=syntax
