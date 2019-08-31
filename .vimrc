@@ -278,7 +278,7 @@ NeoBundle 'vim-scripts/matchit.zip'
 " 用[c, ]c可以上下跳轉
 NeoBundle 'airblade/vim-gitgutter'
 " vim easymotion
-" 快速跳轉，連按,,再加上w或b可以向後或向前跳
+" 快速跳轉，連按\\再加上w或b可以向後或向前跳
 " 如果是s則是搜尋某個字母
 NeoBundle 'easymotion/vim-easymotion'
 " able to select multiple cursors (這是神器啊Orz)
