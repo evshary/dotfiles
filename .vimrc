@@ -295,6 +295,13 @@ NeoBundle 'dyng/ctrlsf.vim'
 " C-p(我這邊改成C-f + f)可以開list，要離開要用esc
 " C-j, C-k: 上下移動  C-t: 新分頁開啟
 NeoBundle 'ctrlpvim/ctrlp.vim'
+" To operate quoting/parenthesizing easily.
+" cs"'     -> "Hi" to 'Hi'
+" cs'<tag> -> 'hi' to <tag>hi</tag>
+" ds"      -> "Hi" to Hi
+" ysiw"    -> Hi to "Hi" (iw means whole word)
+" yss"     -> Hi to "Hi" (s means whole line)
+NeoBundle 'tpope/vim-surround'
 " -------------my plugin----------------
 
 call neobundle#end()
