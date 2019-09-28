@@ -13,9 +13,8 @@
 "                     \/     \/      \/     \/     \/          \/        \/ 
 " Author: evshary
 " Mail: evshary@gmail.com
-" Date: 2015-04-01
 " Updated:
-" 2019-09-28 Use vim-plug to replace NeoBundle
+" 2019-09-28 Use vim-plug to replace NeoBundle and organize the order.
 " 2015-04-02 Adjust the windows size and title
 " 2015-04-01 Complete architecture of vimrc
 
@@ -185,12 +184,6 @@ nnoremap  <leader>fi :call cscope#find('i', expand('<cword>'))<CR>
 " make cscope silent
 let g:cscope_silent = 1
 
-" CtrlSF
-nmap <C-F>s :CtrlSF<CR>
-
-" CtrlP
-let g:ctrlp_map = '<c-f>f'
-
 
 " -------------plugin settings----------------
 " 關於airline，打開tab行
@@ -208,17 +201,33 @@ let g:cpp_member_variable_highlight = 1
 let g:cpp_class_decl_highlight = 1
 let g:cpp_experimental_template_highlight = 1
 
-" vim-markdown
-" Don't fold markdown in default
-let g:vim_markdown_folding_disabled = 1
+" vim-fugitive: vertical Gdiff
+set diffopt+=vertical
 
 " You should adjust the parameters in trinity yourself
 let g:SrcExpl_winHeight = 8
 let g:Tlist_WinWidth = 20
 
-" easy motion settings
-" use ',w' or ',b' to jump word or back
+" easymotion settings
+" use '\\w' or '\\b' to jump word or back
+" f for whole page
 let g:EasyMotion_leader_key = '\'
+nmap f <Plug>(easymotion-bd-w)
+
+" CtrlSF
+nmap <C-F>s :CtrlSF<CR>
+let g:ctrlsf_ackprg = 'ag'
+
+" CtrlP
+" find the nearest ancestor that contains one of these directories or files: .git .hg .svn .bzr _darcs
+let g:ctrlp_working_path_mode = 'ra'
+" Ignore file list
+let g:ctrlp_custom_ignore = {
+  \ 'dir':  '\v[\/]\.(git|hg|svn)$',
+  \ 'file': '\v\.(exe|so|dll)$',
+  \ 'link': 'some_bad_symbolic_links',
+  \ }
+
 
 " vim-plug
 call plug#begin('~/.vim/plugged')
@@ -276,8 +285,12 @@ Plug 'terryma/vim-multiple-cursors'
 " p可以preview，t可以在新頁開啟，T可以新頁開啟並保留window，q為離開
 " C-j, C-k: 上下移動cursor
 Plug 'dyng/ctrlsf.vim'
+" 原始開啟檔案方式(netrw)
+" :Vex：vertical open file list
+" :Hex：horizontal open file list
+" Operations: - enter o v t p
 " 快速開啟file
-" C-p(我這邊改成C-f + f)可以開list，要離開要用esc
+" C-p可以開list，要離開要用esc
 " C-j, C-k: 上下移動  C-t: 新分頁開啟
 Plug 'ctrlpvim/ctrlp.vim'
 " To operate quoting/parenthesizing easily.
