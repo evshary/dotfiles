@@ -6,7 +6,8 @@ You can use it to set the tools below
 # Quick installation
 Use `./install.sh` for quick installation.
 
-After installation, use `:PlugInstall` in vim to install packages.
+We use [vim-plug](https://github.com/junegunn/vim-plug) to manage plugins here.
+Use `:PlugInstall` in vim to install packages.
 
 # vim:
 Maybe you should adjust the windows size of Trinity yourself
