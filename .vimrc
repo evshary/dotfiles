@@ -287,5 +287,20 @@ Plug 'ctrlpvim/ctrlp.vim'
 " ysiw"    -> Hi to "Hi" (iw means whole word)
 " yss"     -> Hi to "Hi" (s means whole line)
 Plug 'tpope/vim-surround'
+" 原始針對文本對象的vim指令
+" *iw和*aw: 針對whole word
+" *ip和*ap: 針對paragraph
+" *i(和*a(: 針對()中的內容
+" *i"和*a": 針對""中的內容
+" textobj-user新增的vim指令
+" *i,和*a,: 針對參數
+" *ii和*ai: 針對indent
+" *if和*af: 針對function
+Plug 'kana/vim-textobj-user'
+Plug 'kana/vim-textobj-indent'
+Plug 'kana/vim-textobj-syntax'
+Plug 'kana/vim-textobj-function', { 'for':['c', 'cpp', 'vim', 'java'] }
+Plug 'sgur/vim-textobj-parameter'
 " -------------my plugin----------------
 call plug#end()
+
