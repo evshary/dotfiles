@@ -3,6 +3,9 @@ dotfiles
 This is my dotfiles setting.
 You can use it to set the tools below
 
+## Quick installation
+Use `./install.sh` for quick installation.
+
 ## vim:
 You need to install vim and neobundle which can manage the package of vim
 
