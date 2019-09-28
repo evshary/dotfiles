@@ -106,10 +106,6 @@ nnoremap J   :tabprev<CR>
 let g:SrcExpl_winHeight = 8
 let g:Tlist_WinWidth = 20
 
-" gitgutter settings
-" update gitgutter every 250ms
-set updatetime=250
-
 " easy motion settings
 " use ',w' or ',b' to jump word or back
 let g:EasyMotion_leader_key = '\'
@@ -256,9 +252,6 @@ Plug 'vim-scripts/matchit.zip'
 " make rgb(x,x,x) or #00ff colorize 
 " Plug 'lilydjwg/colorizer'
 
-" 用git看改了哪幾行
-" 用[c, ]c可以上下跳轉
-Plug 'airblade/vim-gitgutter'
 " vim easymotion
 " 快速跳轉，連按\\再加上w或b可以向後或向前跳
 " 如果是s則是搜尋某個字母
@@ -284,6 +277,11 @@ Plug 'ctrlpvim/ctrlp.vim'
 " ysiw"    -> Hi to "Hi" (iw means whole word)
 " yss"     -> Hi to "Hi" (s means whole line)
 Plug 'tpope/vim-surround'
+" signify
+" Show the VCS diff, like git, svn
+" Use [c and ]c to jump up and down
+" :SignifyDiff to show diff
+Plug 'mhinz/vim-signify'
 " -------------my plugin----------------
 
 call plug#end()
