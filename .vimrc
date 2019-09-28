@@ -212,6 +212,12 @@ set noerrorbells
 set pastetoggle=<F2>
 set nopaste
 
+" vim-cpp-enhanced-highlight
+let g:cpp_class_scope_highlight = 1
+let g:cpp_member_variable_highlight = 1
+let g:cpp_class_decl_highlight = 1
+let g:cpp_experimental_template_highlight = 1
+
 " vim-plug
 call plug#begin('~/.vim/plugged')
 
@@ -282,6 +288,8 @@ Plug 'tpope/vim-surround'
 " Use [c and ]c to jump up and down
 " :SignifyDiff to show diff
 Plug 'mhinz/vim-signify'
+" vim-cpp-enhanced-highlight: Highlight C++
+Plug 'octol/vim-cpp-enhanced-highlight'
 " -------------my plugin----------------
 
 call plug#end()
