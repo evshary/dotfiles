@@ -15,8 +15,9 @@
 " Mail: evshary@gmail.com
 " Date: 2015-04-01
 " Updated:
-" 2015-04-01 Tainan: Complete architecture of vimrc
-" 2015-04-02 Tainan: Adjust the windows size and title
+" 2019-09-28 Use vim-plug to replace NeoBundle
+" 2015-04-02 Adjust the windows size and title
+" 2015-04-01 Complete architecture of vimrc
 
 " mapping
 " if python, F4 = call flake8
@@ -213,102 +214,74 @@ set noerrorbells
 set pastetoggle=<F2>
 set nopaste
 
-" NeoBundle
-" Note: Skip initialization for vim-tiny or vim-small.
-if !1 | finish | endif
-
-if has('vim_starting')
-  if &compatible
-    set nocompatible               " Be iMproved
-  endif
-
-  " Required:
-  set runtimepath+=~/.vim/bundle/neobundle.vim/
-endif
-
-" Required:
-call neobundle#begin(expand('~/.vim/bundle/'))
-
-" Let NeoBundle manage NeoBundle
-" Required:
-NeoBundleFetch 'Shougo/neobundle.vim'
-
-" My Bundles here:
-" Refer to |:NeoBundle-examples|.
-" Note: You don't set neobundle setting in .gvimrc!
+" vim-plug
+call plug#begin('~/.vim/plugged')
 
 " -------------my plugin----------------
 " HTML5 + inline SVG omnicomplete function, indent and syntax for Vim. Based on
 " the default htmlcomplete.vim.
-NeoBundle 'othree/html5.vim'
+Plug 'othree/html5.vim'
 " Syntax highlighting, matching rules and mappings for the original Markdown
 " and extensions.
 " Usage: https://github.com/plasticboy/vim-markdown
-NeoBundle 'plasticboy/vim-markdown'
-NeoBundle 'bling/vim-airline'
+Plug 'plasticboy/vim-markdown'
+Plug 'bling/vim-airline'
 " git plugin for vim
 " 常用:Gdiff(看本文件被改的情況), :Gstatus(看有哪些被改),
 " :Gread(回到上次checkout的情況), :Gblame(看每一行是誰改的)
 " Usage: https://github.com/tpope/vim-fugitive
-NeoBundle 'tpope/vim-fugitive'
+Plug 'tpope/vim-fugitive'
 " A (G)Vim plugin which build the trinity of Source Explorer, TagList and NERD
 " tree to be an IDE for software development.
-NeoBundle 'wesleyche/Trinity'
-NeoBundle 'taglist.vim'
-NeoBundle 'vim-scripts/SrcExpl'
+Plug 'wesleyche/Trinity'
+Plug 'vim-scripts/taglist.vim'
+Plug 'vim-scripts/SrcExpl'
 " Python
 " Using python flake8
-NeoBundle 'nvie/vim-flake8'
+Plug 'nvie/vim-flake8'
 " Folding python
 " zo 展開
 " zc 收起 
 " zn 全部展開 
 " zN 全部收起
-NeoBundle 'python_fold'
+Plug 'vim-scripts/python_fold'
 " cscope
-NeoBundle 'vim-scripts/cscope.vim' 
+Plug 'vim-scripts/cscope.vim' 
 " html/xml跳轉, use %
-NeoBundle 'vim-scripts/matchit.zip'
+Plug 'vim-scripts/matchit.zip'
 
 " DON'T USE!!!! it will cause open tab too slowly
 " make rgb(x,x,x) or #00ff colorize 
-" NeoBundle 'lilydjwg/colorizer'
+" Plug 'lilydjwg/colorizer'
 
 " 用git看改了哪幾行
 " 用[c, ]c可以上下跳轉
-NeoBundle 'airblade/vim-gitgutter'
+Plug 'airblade/vim-gitgutter'
 " vim easymotion
 " 快速跳轉，連按\\再加上w或b可以向後或向前跳
 " 如果是s則是搜尋某個字母
-NeoBundle 'easymotion/vim-easymotion'
+Plug 'easymotion/vim-easymotion'
 " able to select multiple cursors (這是神器啊Orz)
 " C-n C-p C-x: 選擇下個/上個/跳過同樣的字詞，然後再按c就可以重命名
 " 用vip選擇某個block，然後再按C-n加上i就可以在前面插入文字
 " 備註：如果是用vip加上J，代表把這個block的換行拿掉
-NeoBundle 'terryma/vim-multiple-cursors'
+Plug 'terryma/vim-multiple-cursors'
 " 可以用來快速搜尋某個單詞
 " :CtrlSF [pattern]後，會跳出搜尋結果視窗(這邊改成C-f + s)
 " p可以preview，t可以在新頁開啟，T可以新頁開啟並保留window，q為離開
 " C-j, C-k: 上下移動cursor
-NeoBundle 'dyng/ctrlsf.vim'
+Plug 'dyng/ctrlsf.vim'
 " 快速開啟file
 " C-p(我這邊改成C-f + f)可以開list，要離開要用esc
 " C-j, C-k: 上下移動  C-t: 新分頁開啟
-NeoBundle 'ctrlpvim/ctrlp.vim'
+Plug 'ctrlpvim/ctrlp.vim'
 " To operate quoting/parenthesizing easily.
 " cs"'     -> "Hi" to 'Hi'
 " cs'<tag> -> 'hi' to <tag>hi</tag>
 " ds"      -> "Hi" to Hi
 " ysiw"    -> Hi to "Hi" (iw means whole word)
 " yss"     -> Hi to "Hi" (s means whole line)
-NeoBundle 'tpope/vim-surround'
+Plug 'tpope/vim-surround'
 " -------------my plugin----------------
 
-call neobundle#end()
-
-" Required:
-filetype plugin indent on
-
-" If there are uninstalled bundles found on startup,
-" this will conveniently prompt you to install them.
-NeoBundleCheck
+call plug#end()
