@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # install packages
-sudo apt install tmux vim zsh git
+sudo apt install tmux vim zsh git exuberant-ctags
 
 # vim settings
 echo "vim settings ..."

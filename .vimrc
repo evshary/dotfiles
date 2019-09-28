@@ -45,8 +45,10 @@ map <C-\> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
 nmap <C-L>l :exec "ts"<CR>
 nmap <C-L>n :exec "tnext"<CR>
 nmap <C-L>p :exec "tprevious"<CR>
-map <F9>  : !ctags -R<CR>
-map <F12> : !rm tags<CR>
+map <F9>  : !ctags -R -f .tags<CR>
+map <F12> : !rm .tags<CR>
+" find .tags in the current folder first and then the parent folders.
+set tags=./.tags;,.tags
 
 " cscope
 nnoremap <leader>fa :call cscope#findInteractive(expand('<cword>'))<CR>
