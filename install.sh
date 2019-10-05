@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # install packages
-sudo apt install tmux vim zsh git exuberant-ctags silversearcher-ag
+sudo apt install tmux vim zsh git exuberant-ctags silversearcher-ag xclip
 
 # vim settings
 echo "vim settings ..."
