@@ -31,6 +31,9 @@ set backspace=indent,eol,start
 " check spell
 setlocal spell spelllang=en_us
 set nospell
+" Use system clipbard
+" Use "+y or "+p to copy and paste
+set clipboard=unnamedplus
 
 " filetype support
 filetype on
