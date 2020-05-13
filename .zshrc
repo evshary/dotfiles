@@ -53,3 +53,4 @@ export PATH=$PATH:/usr/local/csl/arm-2012.03/bin:/bin:/usr/bin:/usr/X11R6/bin:/u
 setopt no_share_history
 
 cat ~/.rsc/rin.ans
+echo ""
