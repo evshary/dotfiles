@@ -20,7 +20,6 @@ fi
 rm ~/.zshrc
 ln -s dotfiles/.zshrc ~/.zshrc
 rm -rf ~/.zsh
-ln -s dotfiles/.zsh ~/.zsh
 
 # Other settings
 echo "other settings ..."
