@@ -8,7 +8,7 @@ echo "vim settings ..."
 rm ~/.vimrc
 rm -rf ~/.vim
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-ln -s ~/dotfiles/.vimrc ~/.vimrc
+ln -s ~/dotfiles/vimrc ~/.vimrc
 
 # zsh settings
 echo "zsh settings ..."
@@ -18,14 +18,14 @@ if [ ! -d ~/.oh-my-zsh ]; then
   git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 fi
 rm ~/.zshrc
-ln -s dotfiles/.zshrc ~/.zshrc
+ln -s dotfiles/zshrc ~/.zshrc
 rm -rf ~/.zsh
 
 # Other settings
 echo "other settings ..."
 rm -rf ~/.rsc
-ln -s dotfiles/.rsc ~/.rsc
+ln -s dotfiles/rsc ~/.rsc
 rm -rf ~/.tmux.conf
-ln -s dotfiles/.tmux.conf ~/.tmux.conf
+ln -s dotfiles/tmux.conf ~/.tmux.conf
 rm -rf ~/.gitconfig
-ln -s dotfiles/.gitconfig ~/.gitconfig
+ln -s dotfiles/gitconfig ~/.gitconfig
