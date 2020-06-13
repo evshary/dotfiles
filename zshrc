@@ -47,11 +47,21 @@ alias vi='vim'
 alias sl='ls'
 source $ZSH/oh-my-zsh.sh
 
-# Customize to your needs...
-export PATH=$PATH:/usr/local/csl/arm-2012.03/bin:/bin:/usr/bin:/usr/X11R6/bin:/usr/local/bin
-
 # Do not share history for zsh
 setopt no_share_history
+
+# OS dependent command
+if [[ "$OSTYPE" == "linux-gnu"* ]]; then
+    # Linux
+elif [[ "$OSTYPE" == "darwin"* ]]; then
+    # Mac OSX
+    # The default vim for mac has bugs
+    alias vim='/usr/local/bin/vim'
+    # The default ctags for mac is simplified version
+    alias ctags='/usr/local/bin/ctags'
+elif [[ "$OSTYPE" == "msys" ]]; then
+    # Windows 
+fi
 
 # Show the ASCII photo of RIN chan
 #cat ~/.rsc/rin.ans
