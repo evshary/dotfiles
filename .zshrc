@@ -52,5 +52,12 @@ export PATH=$PATH:/usr/local/csl/arm-2012.03/bin:/bin:/usr/bin:/usr/X11R6/bin:/u
 # Do not share history for zsh
 setopt no_share_history
 
-cat ~/.rsc/rin.ans
-echo ""
+# Show the ASCII photo of RIN chan
+#cat ~/.rsc/rin.ans
+#echo ""
+
+# Show enable ROS settings
+ros_dotfile_path=~/.ros_dotfiles/ros_bashrc
+if [ -f $ros_dotfile_path ]; then
+    source $ros_dotfile_path
+fi
