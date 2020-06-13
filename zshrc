@@ -41,8 +41,17 @@ ZSH_THEME="candy"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git git-flow extract zsh-syntax-highlighting zsh-autosuggestions)
+plugins=(
+    git       # Able to detect git folder
+    git-flow  # Support git flow command: https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/git-flow
+    git-open  # Quick open git remote folder: https://github.com/paulirish/git-open
+    extract   # x to extract all kind of compressed files
+    z         # z to jump the recently used folder: https://github.com/agkozak/zsh-z
+    zsh-syntax-highlighting # Highlight which command can be used
+    zsh-autosuggestions     # Suggest the latest used command 
+)
 
+alias go=git-open # Alias git-open
 alias vi='vim'
 alias sl='ls'
 source $ZSH/oh-my-zsh.sh
