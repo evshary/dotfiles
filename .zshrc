@@ -44,6 +44,7 @@ ZSH_THEME="candy"
 plugins=(git git-flow extract zsh-syntax-highlighting zsh-autosuggestions)
 
 alias vi='vim'
+alias sl='ls'
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
