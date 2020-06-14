@@ -72,6 +72,10 @@ elif [[ "$OSTYPE" == "msys" ]]; then
     # Windows 
 fi
 
+# Enable core dump
+# If segmentation fault, run `gdb ./exe core`
+ulimit -c unlimited
+
 # Show the ASCII photo of RIN chan
 #cat ~/.rsc/rin.ans
 #echo ""
