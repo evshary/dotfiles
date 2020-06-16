@@ -14,9 +14,9 @@ ln -s ~/dotfiles/vimrc ~/.vimrc
 echo "zsh settings ..."
 if [ ! -d ~/.oh-my-zsh ]; then
   curl -L http://install.ohmyz.sh | sh
-  git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
+  git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
   git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
-  git clone https://github.com/paulirish/git-open.git $ZSH_CUSTOM/plugins/git-open
+  git clone https://github.com/paulirish/git-open.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/git-open
 fi
 rm ~/.zshrc
 ln -s dotfiles/zshrc ~/.zshrc
