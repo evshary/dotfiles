@@ -81,9 +81,9 @@ ulimit -c unlimited
 #echo ""
 
 # Show enable ROS settings
-ros_dotfile_path=~/.ros_dotfiles/ros_bashrc
-if [ -f $ros_dotfile_path ]; then
-    source $ros_dotfile_path
+ros_menu_path=~/.ros_menu/ros_bashrc
+if [ -f $ros_menu_path ]; then
+    source $ros_menu_path
 fi
 
 # Bugfix for zsh
