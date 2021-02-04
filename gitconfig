@@ -1,8 +1,8 @@
 [user]
-	email = evshary@gmail.com
-	name = ChenYing Kuo
+    email = evshary@gmail.com
+    name = ChenYing Kuo
 [core]
-	editor = vim
+    editor = vim
 [alias]
     lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --all
     st = status
