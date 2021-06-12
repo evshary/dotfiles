@@ -51,7 +51,7 @@ plugins=(
     zsh-autosuggestions     # Suggest the latest used command 
 )
 
-alias go=git-open # Alias git-open
+alias ggo=git-open # Alias git-open, don't use go to avoid conflicts with golang
 alias vi='vim'
 alias sl='ls'
 source $ZSH/oh-my-zsh.sh
