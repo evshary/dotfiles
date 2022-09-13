@@ -222,16 +222,9 @@ nmap f <Plug>(easymotion-bd-w)
 nmap <C-F>s :CtrlSF<CR>
 let g:ctrlsf_ackprg = 'ag'
 
-" CtrlP
-" find the nearest ancestor that contains one of these directories or files: .git .hg .svn .bzr _darcs
-let g:ctrlp_working_path_mode = 'ra'
-" Ignore file list
-let g:ctrlp_custom_ignore = {
-  \ 'dir':  '\v[\/]\.(git|hg|svn)$',
-  \ 'file': '\v\.(exe|so|dll)$',
-  \ 'link': 'some_bad_symbolic_links',
-  \ }
-
+" FZF
+nmap <C-p> :FZF<CR>
+let $FZF_DEFAULT_OPTS="--preview 'bat --style=numbers --color=always --line-range :500 {}'"
 
 " vim-plug
 call plug#begin('~/.vim/plugged')
@@ -291,14 +284,6 @@ Plug 'terryma/vim-multiple-cursors'
 " p可以preview，t可以在新頁開啟，T可以新頁開啟並保留window，q為離開
 " C-j, C-k: 上下移動cursor
 Plug 'dyng/ctrlsf.vim'
-" 原始開啟檔案方式(netrw)
-" :Vex：vertical open file list
-" :Hex：horizontal open file list
-" Operations: - enter o v t p
-" 快速開啟file
-" C-p可以開list，要離開要用esc
-" C-j, C-k: 上下移動  C-t: 新分頁開啟
-Plug 'ctrlpvim/ctrlp.vim'
 " To operate quoting/parenthesizing easily.
 " cs"'     -> "Hi" to 'Hi'
 " cs'<tag> -> 'hi' to <tag>hi</tag>
@@ -307,8 +292,17 @@ Plug 'ctrlpvim/ctrlp.vim'
 " yss"     -> Hi to "Hi" (s means whole line)
 Plug 'tpope/vim-surround'
 " fzf plugin
+" 沒有 fzf 的開啟檔案方式(netrw)
+" :Vex: vertical open file list
+" :Hex: horizontal open file list
+" fzf 的開檔方式
+" :FZF
+" :FZF <PATH>
+" C-j, C-k: 上下移動
+" C-t: 新分頁開啟, C-x: 水平分頁, C-v: 垂直分頁
 Plug '~/.fzf'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'yuki-yano/fzf-preview.vim', { 'branch': 'release/rpc' }
 " 原始針對文本對象的vim指令
 " *iw和*aw: 針對whole word
 " *ip和*ap: 針對paragraph
