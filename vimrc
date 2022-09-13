@@ -14,7 +14,8 @@
 " Author: evshary
 " Mail: evshary@gmail.com
 " Updated:
-" 2019-09-28 Use vim-plug to replace NeoBundle and organize the order.
+" 2022-09-06 Add fzf plugin
+" 2019-09-28 Use vim-plug to replace NeoBundle and organize the order
 " 2015-04-02 Adjust the windows size and title
 " 2015-04-01 Complete architecture of vimrc
 
@@ -275,8 +276,10 @@ Plug 'vim-scripts/matchit.zip'
 
 
 " >>>> Fast modification <<<<
-" 快速跳轉，連按\\再加上w或b可以向後或向前跳
-" 如果是s則是搜尋某個字母
+" f: 可以整頁快速跳轉
+" \\w: 向下跳
+" \\b: 向上跳
+" \\s: 針對某個字母跳轉
 Plug 'easymotion/vim-easymotion'
 " able to select multiple cursors (這是神器啊Orz)
 " C-n C-p C-x: 選擇下個/上個/跳過同樣的字詞，然後再按c就可以重命名
@@ -303,6 +306,9 @@ Plug 'ctrlpvim/ctrlp.vim'
 " ysiw"    -> Hi to "Hi" (iw means whole word)
 " yss"     -> Hi to "Hi" (s means whole line)
 Plug 'tpope/vim-surround'
+" fzf plugin
+Plug '~/.fzf'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 " 原始針對文本對象的vim指令
 " *iw和*aw: 針對whole word
 " *ip和*ap: 針對paragraph
