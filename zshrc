@@ -72,6 +72,26 @@ elif [[ "$OSTYPE" == "msys" ]]; then
     # Windows 
 fi
 
+# fzf setting
+# Usage:
+#   - Use ** to autocomplete files
+#   - ctrl+r: command history
+#   - alt+c: search folders
+#   - ctrl+t: search files and folders
+# Use rg for find
+export FZF_DEFAULT_COMMAND='rg --files --follow --no-ignore-vcs --hidden -g "!{node_modules/*,.git/*}"'
+# Setup preview while completion
+PREVIEW_OPTS="--preview 'bat --style=numbers --color=always --line-range :500 {}'"
+export FZF_COMPLETION_OPTS=$PREVIEW_OPTS
+# f to list all files
+f() {
+    fzf --height 40% --layout reverse --info inline --border \
+        --preview 'file {}' --preview-window up,1,border-horizontal \
+        --color 'fg:#bbccdd,fg+:#ddeeff,bg:#334455,preview-bg:#223344,border:#778899'
+}
+# Source environmental variables
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
 # Enable core dump
 # If segmentation fault, run `gdb ./exe core`
 ulimit -c unlimited
@@ -90,3 +110,4 @@ fi
 # https://github.com/ros2/ros2cli/issues/534
 eval "$(register-python-argcomplete3 ros2)"
 eval "$(register-python-argcomplete3 colcon)"
+

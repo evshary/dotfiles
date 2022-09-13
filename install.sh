@@ -1,7 +1,18 @@
 #!/bin/bash
 
 # install packages
-sudo apt install tmux vim-gtk zsh git exuberant-ctags silversearcher-ag xclip
+sudo apt install tmux vim-gtk zsh \
+                 git exuberant-ctags \
+                 silversearcher-ag ripgrep \
+                 xclip
+# install bat
+# We need to install this way since the confliction of bat and ripgrep
+# https://github.com/BurntSushi/ripgrep/issues/1562
+apt-get download bat
+sudo dpkg --force-overwrite -i bat*.deb
+rm bat*.deb
+mkdir -p ~/.local/bin
+ln -s /usr/bin/batcat ~/.local/bin/bat
 
 # vim settings
 echo "vim settings ..."
@@ -21,6 +32,10 @@ fi
 rm ~/.zshrc
 ln -s dotfiles/zshrc ~/.zshrc
 rm -rf ~/.zsh
+
+# fzf installation
+git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+~/.fzf/install
 
 # Other settings
 echo "other settings ..."
