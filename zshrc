@@ -92,6 +92,19 @@ f() {
 # Source environmental variables
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
+# ranger setting
+# j/k: up / down
+# l: enter a directory / open a file
+# h: back to parent directory
+# q: exit
+#
+# yy: copy files
+# pp: past files
+# dd: cut files
+# dD: delete files
+# DD: delete files to trash
+alias rf='ranger'
+
 # Enable core dump
 # If segmentation fault, run `gdb ./exe core`
 ulimit -c unlimited

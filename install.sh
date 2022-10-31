@@ -37,6 +37,14 @@ rm -rf ~/.zsh
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 ~/.fzf/install
 
+# Install ranger
+python3 -m pip install ranger-fm
+rm -rf ~/.config/ranger/*
+ranger --copy-config=all
+# Settings is from https://yangxuanx.github.io/2019/03/11/ranger%E7%9A%84%E4%BD%BF%E7%94%A8/
+cat ranger/commands.py >> ~/.config/ranger/commands.py
+cat ranger/rc.conf >> ~/.config/ranger/rc.conf
+
 # Other settings
 echo "other settings ..."
 rm -rf ~/.rsc
