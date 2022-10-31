@@ -79,7 +79,8 @@ fi
 #   - alt+c: search folders
 #   - ctrl+t: search files and folders
 # Use rg for find
-export FZF_DEFAULT_COMMAND='rg --files --follow --no-ignore-vcs --hidden -g "!{node_modules/*,.git/*}"'
+export FZF_DEFAULT_COMMAND="rg --files --follow --no-ignore-vcs --hidden -g '!{node_modules,.git,build,install,log,.local,snap}'"
+export FZF_CTRL_T_COMMAND=$FZF_DEFAULT_COMMAND
 # Setup preview while completion
 PREVIEW_OPTS="--preview 'bat --style=numbers --color=always --line-range :500 {}'"
 export FZF_COMPLETION_OPTS=$PREVIEW_OPTS
