@@ -5,10 +5,10 @@ You can use it to set the tools below
 
 # Quick installation
 
-Use `./install.sh` for quick installation.
-
-We use [vim-plug](https://github.com/junegunn/vim-plug) to manage plugins here.
-Use `:PlugInstall` in vim to install packages.
+1. Use `./install.sh` for quick installation.
+2. Change the shell: `chsh -s /bin/zsh`.
+3. Logout and then login
+4. We use [vim-plug](https://github.com/junegunn/vim-plug) to manage plugins here. Use `:PlugInstall` in vim to install packages.
 
 # vim
 
