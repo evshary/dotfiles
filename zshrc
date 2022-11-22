@@ -110,6 +110,13 @@ alias rf='ranger'
 # If segmentation fault, run `gdb ./exe core`
 ulimit -c unlimited
 
+# Update the system with one command
+upgrade() {
+    sudo apt update && sudo apt upgrade && sudo apt autoremove
+    python3 -m pip install --upgrade pip
+    rustup update
+}
+
 # Show the ASCII photo of RIN chan
 #cat ~/.rsc/rin.ans
 #echo ""
