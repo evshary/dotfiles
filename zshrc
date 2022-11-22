@@ -117,6 +117,9 @@ upgrade() {
     rustup update
 }
 
+# Add $HOME directory
+export PATH=$HOME/.local/bin/:$PATH
+
 # Show the ASCII photo of RIN chan
 #cat ~/.rsc/rin.ans
 #echo ""
