@@ -14,10 +14,24 @@
 " Author: evshary
 " Mail: evshary@gmail.com
 " Updated:
+" 2022-12-12 Add some cheatsheet for vim
 " 2022-09-06 Add fzf plugin
 " 2019-09-28 Use vim-plug to replace NeoBundle and organize the order
 " 2015-04-02 Adjust the windows size and title
 " 2015-04-01 Complete architecture of vimrc
+
+" -------------Usefule cheatsheet-------------
+" Reference: https://vim.rtorr.com/lang/zh_tw
+" Move words:
+"   - right: w
+"   - left: b
+" Move screen
+"   - down without moving cursor: ctrl+e
+"   - up without moving cursor: ctrl+y
+" Jump to file: gf
+" Change to uppercase: gU
+" Change to lowercase: gu
+" Combine the next line to current line: gJ
 
 " -------------vim settings----------------
 set tabstop=4
