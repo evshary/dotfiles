@@ -241,6 +241,10 @@ nmap <C-p> :FZF<CR>
 let $FZF_DEFAULT_COMMAND='rg --files --follow --no-ignore-vcs --hidden -g "!{node_modules/*,.git/*}"'
 let $FZF_DEFAULT_OPTS="--preview 'bat --style=numbers --color=always --line-range :500 {}'"
 
+" Rust related
+" Do Rust format while save
+let g:rustfmt_autosave = 1
+
 " vim-plug
 call plug#begin('~/.vim/plugged')
 " -------------my plugin----------------
@@ -332,6 +336,8 @@ Plug 'kana/vim-textobj-indent'
 Plug 'kana/vim-textobj-syntax'
 Plug 'kana/vim-textobj-function', { 'for':['c', 'cpp', 'vim', 'java'] }
 Plug 'sgur/vim-textobj-parameter'
+Plug 'rust-lang/rust.vim'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " -------------my plugin----------------
 call plug#end()
 

@@ -12,6 +12,13 @@ You can use it to set the tools below
 
 # vim
 
+While open the vim, you need to install the plugins by yourself
+
+```shell
+:PlugInstall
+:CocInstall coc-rust-analyzer
+```
+
 Maybe you should adjust the windows size of Trinity yourself
 
 ```shell
@@ -29,4 +36,8 @@ For better gdb
 git clone https://github.com/longld/peda.git ~/peda
 echo "source ~/peda/peda.py" >> ~/.gdbinit
 ```
+
+# TODO
+
+* Add how to use rust-anaylzer
 
