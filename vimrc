@@ -14,6 +14,7 @@
 " Author: evshary
 " Mail: evshary@gmail.com
 " Updated:
+" 2022.12.28 Able to use coc for Rust, C/C++, and Python
 " 2022-12-12 Add some cheatsheet for vim
 " 2022-09-06 Add fzf plugin
 " 2019-09-28 Use vim-plug to replace NeoBundle and organize the order
@@ -257,6 +258,10 @@ nmap <silent> gr <Plug>(coc-references)
 " <C-g>u breaks current undo, please make your own choice
 inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
                               \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+
+" disable ALE and only show from coc
+" https://github.com/dense-analysis/ale#5iii-how-can-i-use-ale-and-cocnvim-together
+let g:ale_disable_lsp = 1
 
 " vim-plug
 call plug#begin('~/.vim/plugged')
