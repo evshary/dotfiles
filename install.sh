@@ -3,7 +3,7 @@
 # install packages
 sudo add-apt-repository ppa:jonathonf/vim # Use the latest vim
 sudo apt update
-sudo apt install tmux vim-gtk zsh \
+sudo apt install tmux vim vim-gtk zsh \
                  git exuberant-ctags \
                  silversearcher-ag ripgrep \
                  xclip
@@ -21,7 +21,7 @@ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 source "$HOME/.cargo/env"
 
 # install nvm (This is necessary for vim Coc plugin)
-curl -sL install-node.vercel.app/lts | bash
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash
 nvm install node
 
 # vim settings
