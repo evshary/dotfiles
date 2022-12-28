@@ -10,6 +10,7 @@ You can use it to set the tools below
 3. Logout and then login
 4. We use [vim-plug](https://github.com/junegunn/vim-plug) to manage plugins here. Use `:PlugInstall` in vim to install packages.
 5. Install coc in vim: `:CocInstall coc-rust-analyzer` in vim
+  - If there is coc error while opening vim, it might be node version issue. Please use nvm to update node.
 
 # vim
 
@@ -33,5 +34,5 @@ echo "source ~/peda/peda.py" >> ~/.gdbinit
 
 # TODO
 
-* Add how to use rust-anaylzer
+* Add C++ / Python coc
 
