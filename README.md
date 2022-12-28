@@ -9,15 +9,9 @@ You can use it to set the tools below
 2. Change the shell: `chsh -s /bin/zsh`.
 3. Logout and then login
 4. We use [vim-plug](https://github.com/junegunn/vim-plug) to manage plugins here. Use `:PlugInstall` in vim to install packages.
+5. Install coc in vim: `:CocInstall coc-rust-analyzer` in vim
 
 # vim
-
-While open the vim, you need to install the plugins by yourself
-
-```shell
-:PlugInstall
-:CocInstall coc-rust-analyzer
-```
 
 Maybe you should adjust the windows size of Trinity yourself
 
