@@ -151,8 +151,6 @@ nnoremap K   :tabnext<CR>
 nnoremap J   :tabprev<CR>
 
 " >>>> plugin key mappings <<<<
-" if python, F4 = call flake8
-autocmd FileType python map <buffer> <F4> :call Flake8()<CR>
 
 " Trinity mapping
 nmap <F5> :TrinityToggleSourceExplorer<CR>
@@ -262,6 +260,9 @@ inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
 " disable ALE and only show from coc
 " https://github.com/dense-analysis/ale#5iii-how-can-i-use-ale-and-cocnvim-together
 let g:ale_disable_lsp = 1
+let g:ale_fix_on_save = 1
+let g:ale_linters = { 'python': ['ruff', ], }
+let g:ale_fixers = { 'python': ['ruff', ], }
 
 " vim-plug
 call plug#begin('~/.vim/plugged')
@@ -297,8 +298,6 @@ Plug 'mhinz/vim-signify'
 Plug 'wesleyche/Trinity'
 Plug 'vim-scripts/taglist.vim'
 Plug 'vim-scripts/SrcExpl'
-" Using python flake8
-Plug 'nvie/vim-flake8'
 " cscope
 Plug 'vim-scripts/cscope.vim' 
 " html/xml跳轉, use %
