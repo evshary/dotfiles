@@ -22,6 +22,7 @@ source "$HOME/.cargo/env"
 
 # install nvm (This is necessary for vim Coc plugin)
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash
+source "$HOME/.nvm/nvm.sh"
 nvm install node
 
 # vim settings
