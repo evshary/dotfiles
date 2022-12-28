@@ -57,6 +57,9 @@ ranger --copy-config=all
 cat ranger/commands.py >> ~/.config/ranger/commands.py
 cat ranger/rc.conf >> ~/.config/ranger/rc.conf
 
+# Install ruff (Python3 linter & fixer)
+python3 -m pip install ruff
+
 # Other settings
 echo "other settings ..."
 rm -rf ~/.rsc
