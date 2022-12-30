@@ -4,7 +4,7 @@
 sudo add-apt-repository ppa:jonathonf/vim # Use the latest vim
 sudo apt update
 sudo apt install tmux vim vim-gtk zsh \
-                 git exuberant-ctags \
+                 git exuberant-ctags ccls \
                  silversearcher-ag ripgrep \
                  xclip
 # install bat
