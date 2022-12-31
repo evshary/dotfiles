@@ -264,6 +264,14 @@ let g:ale_fix_on_save = 1
 let g:ale_linters = { 'python': ['ruff', ], }
 let g:ale_fixers = { 'python': ['ruff', ], }
 
+" vim bookmark
+execute "set <M-k>=\ek"
+execute "set <M-l>=\el"
+execute "set <M-j>=\ej"
+nnoremap <A-k> <Plug>BookmarkToggle
+nnoremap <A-l> <Plug>BookmarkNext
+nnoremap <A-j> <Plug>BookmarkPrev
+
 " vim-plug
 call plug#begin('~/.vim/plugged')
 " -------------my plugin----------------
@@ -357,6 +365,11 @@ Plug 'sgur/vim-textobj-parameter'
 Plug 'rust-lang/rust.vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'dense-analysis/ale' " This can show the syntax error immediately. You don't need to save.
+" Bookmark
+" toggle: alt+k
+" next: alt+l
+" last: alt+j
+Plug 'MattesGroeger/vim-bookmarks'
 " -------------my plugin----------------
 call plug#end()
 
