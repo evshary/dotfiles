@@ -272,6 +272,11 @@ nnoremap <A-k> <Plug>BookmarkToggle
 nnoremap <A-l> <Plug>BookmarkNext
 nnoremap <A-j> <Plug>BookmarkPrev
 
+" vim text marker
+let HiSet   = '<S-F8>'
+let HiErase = '<S-F9>'
+let HiClear = '<S-F7>'
+
 " vim-plug
 call plug#begin('~/.vim/plugged')
 " -------------my plugin----------------
@@ -370,6 +375,8 @@ Plug 'dense-analysis/ale' " This can show the syntax error immediately. You don'
 " next: alt+l
 " last: alt+j
 Plug 'MattesGroeger/vim-bookmarks'
+" Text marker
+Plug 'azabiong/vim-highlighter'
 " -------------my plugin----------------
 call plug#end()
 
