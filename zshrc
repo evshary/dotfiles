@@ -115,6 +115,7 @@ upgrade() {
     sudo apt update && sudo apt upgrade && sudo apt autoremove
     python3 -m pip install --upgrade pip
     rustup update
+    poetry self update
 }
 
 # Add $HOME directory

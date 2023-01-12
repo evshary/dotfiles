@@ -20,6 +20,10 @@ ln -s /usr/bin/batcat ~/.local/bin/bat
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 source "$HOME/.cargo/env"
 
+# install python poetry
+curl -sSL https://install.python-poetry.org | python3 -
+poetry config virtualenvs.in-project true
+
 # install nvm (This is necessary for vim Coc plugin)
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash
 source "$HOME/.nvm/nvm.sh"
