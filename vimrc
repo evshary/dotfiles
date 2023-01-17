@@ -276,6 +276,13 @@ nnoremap <A-j> <Plug>BookmarkPrev
 let HiSet   = '<S-F8>'
 let HiErase = '<S-F9>'
 let HiClear = '<S-F7>'
+" In fact, we don't use HiFind. However, the original keybinding will conflict 
+" with easymotion, so need to map to another one.
+let HiFind  = '<S-F6>'
+
+" Not sure why vim-airline cause ESC delay, so we make the timeout smaller
+" https://vi.stackexchange.com/questions/16148/slow-vim-escape-from-insert-mode
+set ttimeoutlen=5
 
 " vim-plug
 call plug#begin('~/.vim/plugged')
