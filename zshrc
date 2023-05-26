@@ -112,6 +112,7 @@ ulimit -c unlimited
 
 # Update the system with one command
 upgrade() {
+    pushd $HOME/dotfiles > /dev/null && git pull && popd > /dev/null
     sudo apt update && sudo apt upgrade && sudo apt autoremove
     python3 -m pip install --upgrade pip
     rustup update
