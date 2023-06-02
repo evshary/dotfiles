@@ -64,6 +64,13 @@ cat ranger/rc.conf >> ~/.config/ranger/rc.conf
 # Install ruff (Python3 linter & fixer)
 python3 -m pip install ruff
 
+# Install flatpak
+sudo apt install flatpak
+## Add Flathub
+flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+## Install useful packages
+flatpak install flathub net.sapples.LiveCaptions  # LiveCaptions
+
 # Other settings
 echo "other settings ..."
 rm -rf ~/.rsc
