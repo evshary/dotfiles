@@ -6,7 +6,7 @@ sudo apt update
 sudo apt install tmux vim vim-gtk zsh \
                  git exuberant-ctags ccls \
                  silversearcher-ag ripgrep \
-                 xclip
+                 xclip curl python3-pip python3-argcomplete
 # install bat
 # We need to install this way since the confliction of bat and ripgrep
 # https://github.com/BurntSushi/ripgrep/issues/1562

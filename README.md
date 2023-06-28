@@ -7,7 +7,7 @@ You can use it to set the tools below
 
 1. Use `./install.sh` for quick installation.
 2. Change the shell: `chsh -s /bin/zsh`.
-3. Logout and then login
+3. Logout and then login (Also make some environmental variables take effect)
 4. We use [vim-plug](https://github.com/junegunn/vim-plug) to manage plugins here. Use `:PlugInstall` in vim to install packages.
 5. Install coc plugin in vim: `:CocInstall coc-rust-analyzer` and `:CocInstall coc-pyright` in vim
   - If there is coc error while opening vim, it might be node version issue. Please use nvm to update node.
