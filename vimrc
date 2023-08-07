@@ -14,7 +14,8 @@
 " Author: evshary
 " Mail: evshary@gmail.com
 " Updated:
-" 2022.12.28 Able to use coc for Rust, C/C++, and Python
+" 2023-08-07 Make terminal transparent
+" 2022-12-28 Able to use coc for Rust, C/C++, and Python
 " 2022-12-12 Add some cheatsheet for vim
 " 2022-09-06 Add fzf plugin
 " 2019-09-28 Use vim-plug to replace NeoBundle and organize the order
@@ -66,8 +67,6 @@ set history=1000
 " remember undo
 set undolevels=1000
 
-" highlight 80
-set colorcolumn=80
 " display location
 set ruler
 " show cursor
@@ -123,6 +122,9 @@ set noerrorbells
 set pastetoggle=<F2>
 set nopaste
 
+" Make terminal transparent
+hi Normal guibg=NONE ctermbg=NONE
+hi EndOfBuffer guibg=NONE ctermbg=NONE
 
 " -------------key mappings----------------
 "  >>>> vim key mappings <<<<
