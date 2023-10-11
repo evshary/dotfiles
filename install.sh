@@ -67,6 +67,9 @@ python3 -m pip install ruff
 # Install flatpak
 sudo apt install flatpak
 
+# Install SDKMAN
+curl -s "https://get.sdkman.io" | bash
+
 # Other settings
 echo "other settings ..."
 rm -rf ~/.rsc
