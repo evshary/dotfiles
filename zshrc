@@ -118,9 +118,6 @@ upgrade() {
     rustup update
 }
 
-# Live Captions
-alias livecaptions='flatpak run net.sapples.LiveCaptions'
-
 # Add $HOME directory
 export PATH=$HOME/.local/bin/:$PATH
 
