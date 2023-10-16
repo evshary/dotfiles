@@ -118,6 +118,23 @@ upgrade() {
     rustup update
 }
 
+# Clean the used space
+clean_disk() {
+    # Clean docker cache
+    docker system prune -f
+    # Clean apt cache
+    sudo apt clean
+    # Clean snap cache
+    sudo sh -c 'rm -rf /var/lib/snapd/cache/*'
+    # Clean vscode cache
+    rm -rf $HOME/.config/Code/User/workspaceStorage/*
+    rm -rf $HOME/.cache/vscode-cpptools/ipch/*
+    # Clean chrome cache
+    rm -rf $HOME/.cache/google-chrome/Default/Cache/
+    rm -rf $HOME/.cache/google-chrome/Default/Media\ Cache/
+    rm -rf $HOME/.cache/google-chrome/Profile\ 2/Cache/
+}
+
 # Add $HOME directory
 export PATH=$HOME/.local/bin/:$PATH
 
