@@ -8,3 +8,5 @@
     st = status
     br = branch
     co = checkout
+[rerere]
+	enabled = true
