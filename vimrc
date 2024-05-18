@@ -13,15 +13,7 @@
 "                     \/     \/      \/     \/     \/          \/        \/ 
 " Author: evshary
 " Mail: evshary@gmail.com
-" Updated:
-" 2023-08-07 Make terminal transparent
-" 2022-12-28 Able to use coc for Rust, C/C++, and Python
-" 2022-12-12 Add some cheatsheet for vim
-" 2022-09-06 Add fzf plugin
-" 2019-09-28 Use vim-plug to replace NeoBundle and organize the order
-" 2015-04-02 Adjust the windows size and title
-" 2015-04-01 Complete architecture of vimrc
-
+"
 " -------------Usefule cheatsheet-------------
 " Reference: https://vim.rtorr.com/lang/zh_tw
 " Move words:
@@ -262,7 +254,8 @@ inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
 " disable ALE and only show from coc
 " https://github.com/dense-analysis/ale#5iii-how-can-i-use-ale-and-cocnvim-together
 let g:ale_disable_lsp = 1
-let g:ale_fix_on_save = 1
+" Don't save for the time being.
+"let g:ale_fix_on_save = 1
 let g:ale_linters = { 'python': ['ruff', ], }
 let g:ale_fixers = { 'python': ['ruff', ], }
 
