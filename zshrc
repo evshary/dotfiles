@@ -142,12 +142,6 @@ export PATH=$HOME/.local/bin/:$PATH
 #cat ~/.rsc/rin.ans
 #echo ""
 
-# Show enable ROS settings
-ros_menu_path=~/.ros_menu/ros_bashrc
-if [ -f $ros_menu_path ]; then
-    source $ros_menu_path
-fi
-
 # Bugfix for zsh
 # https://github.com/ros2/ros2cli/issues/534
 eval "$(register-python-argcomplete3 ros2)"
