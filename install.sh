@@ -64,6 +64,9 @@ cat ranger/rc.conf >> ~/.config/ranger/rc.conf
 # Install ruff (Python3 linter & fixer)
 python3 -m pip install ruff
 
+# Install pre-commit
+python3 -m pip install pre-commit
+
 # Install flatpak
 sudo apt install flatpak
 
