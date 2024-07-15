@@ -78,14 +78,6 @@ cat ranger/commands.py >> ~/.config/ranger/commands.py
 cat ranger/rc.conf >> ~/.config/ranger/rc.conf
 
 
-# flatpak: application management tool
-sudo apt install flatpak
-
-
-# SDKMAN: sdk management tool
-curl -s "https://get.sdkman.io" | bash
-
-
 # Other settings
 echo "other settings ..."
 rm -rf ~/.rsc
