@@ -16,19 +16,11 @@ You can use it to set the tools below
 
 2. Change the shell: `chsh -s /bin/zsh`.
 
-3. Add pyenv configuration to `~/.profile`
+3. Logout and then login (Also make some environmental variables take effect)
 
-   ```bash
-   export PYENV_ROOT="$HOME/.pyenv"
-   [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
-   eval "$(pyenv init -)"
-   ```
+4. We use [vim-plug](https://github.com/junegunn/vim-plug) to manage plugins here. Use `:PlugInstall` in vim to install packages.
 
-4. Logout and then login (Also make some environmental variables take effect)
-
-5. We use [vim-plug](https://github.com/junegunn/vim-plug) to manage plugins here. Use `:PlugInstall` in vim to install packages.
-
-6. Install coc plugin in vim: `:CocInstall coc-rust-analyzer` and `:CocInstall coc-pyright` in vim
+5. Install coc plugin in vim: `:CocInstall coc-rust-analyzer` and `:CocInstall coc-pyright` in vim
   - If there is coc error while opening vim, it might be node version issue. Please use nvm to update node.
 
 ## vim
