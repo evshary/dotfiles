@@ -29,6 +29,8 @@ source "$HOME/.cargo/env"
 curl -sSL https://install.python-poetry.org | python3 -
 ### poetry: Always make sure the virtualenv is under the project
 poetry config virtualenvs.in-project true
+## pyenv
+curl https://pyenv.run | bash
 ## Ruff: Python3 linter & fixer
 python3 -m pip install ruff
 ## pre-commit: Add hooks to git commit
