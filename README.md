@@ -5,13 +5,13 @@ You can use it to set the tools below
 
 ## Quick installation
 
-1. Run installation script.
+1. Run installation script inside the OS.
 
    ```shell
    # Basic
-   ./install.sh
+   ./ubuntu2404/install.sh
    # Full (Package management / docker)
-   ./install_full.sh
+   ./ubuntu2404/install_full.sh
    ```
 
 2. Change the shell: `chsh -s /bin/zsh`.
@@ -22,15 +22,4 @@ You can use it to set the tools below
 
 5. Install coc plugin in vim: `:CocInstall coc-rust-analyzer` and `:CocInstall coc-pyright` in vim
   - If there is coc error while opening vim, it might be node version issue. Please use nvm to update node.
-
-## vim
-
-Maybe you should adjust the windows size of Trinity yourself
-
-```shell
-# about 103
-let g:Tlist_WinWidth = 23
-# about 127
-let g:SrcExpl_winHeight = 8
-```
 
