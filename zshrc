@@ -114,7 +114,7 @@ ulimit -c unlimited
 upgrade() {
     pushd $HOME/dotfiles > /dev/null && git pull && popd > /dev/null
     sudo apt update && sudo apt upgrade && sudo apt autoremove
-    python3 -m pip install --upgrade pip
+    pipx upgrade-all
     poetry self update
     pyenv update
     rustup update

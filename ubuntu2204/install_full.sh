@@ -1,5 +1,12 @@
 #!/bin/bash
 
+# Stop whenever any commit fails
+set -e
+
+echo "======== Start to install full dotfiles configuration ========"
+echo ""
+
+
 # Install the development environment
 ./ubuntu2204/install.sh
 
@@ -17,3 +24,5 @@ sudo apt install -y docker.io
 sudo groupadd docker
 sudo usermod -aG docker $USER
 
+echo ""
+echo "======== Full dotfiles installation is done ======="

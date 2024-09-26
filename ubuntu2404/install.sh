@@ -50,8 +50,8 @@ if [ "$CLEAN" = "1" ]; then
     rm -rf ~/.vim
 fi
 if [ ! -d ~/.vim ]; then
-  curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-  ln -s ~/dotfiles/coc-settings.json ~/.vim/coc-settings.json
+    curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+    ln -s ~/dotfiles/coc-settings.json ~/.vim/coc-settings.json
 fi
 
 
@@ -60,10 +60,10 @@ if [ "$CLEAN" = "1" ]; then
     rm -rf ~/.oh-my-zsh
 fi
 if [ ! -d ~/.oh-my-zsh ]; then
-  curl -L http://install.ohmyz.sh | sh
-  git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
-  git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
-  git clone https://github.com/paulirish/git-open.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/git-open
+    curl -L http://install.ohmyz.sh | sh
+    git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+    git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+    git clone https://github.com/paulirish/git-open.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/git-open
 fi
 rm ~/.zshrc
 ln -s dotfiles/zshrc ~/.zshrc
@@ -75,8 +75,8 @@ if [ "$CLEAN" = "1" ]; then
     rm -rf ~/.fzf
 fi
 if [ ! -d ~/.fzf ]; then
-  git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
-  ~/.fzf/install
+    git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+    ~/.fzf/install
 fi
 
 
@@ -98,4 +98,3 @@ ln -s dotfiles/gitconfig ~/.gitconfig
 
 echo ""
 echo "======== Basic dotfiles installation is done ======="
-
