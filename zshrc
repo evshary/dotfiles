@@ -144,10 +144,10 @@ export PATH=$HOME/.local/bin/:$PATH
 #cat ~/.rsc/rin.ans
 #echo ""
 
-# Bugfix for zsh
-# https://github.com/ros2/ros2cli/issues/534
-eval "$(register-python-argcomplete3 ros2)"
-eval "$(register-python-argcomplete3 colcon)"
+## Bugfix for zsh
+## https://github.com/ros2/ros2cli/issues/534
+#eval "$(register-python-argcomplete3 ros2)"
+#eval "$(register-python-argcomplete3 colcon)"
 
 # Add NVM Path
 export NVM_DIR="$HOME/.nvm"

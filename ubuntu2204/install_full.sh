@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Install the development environment
-./install.sh
+./ubuntu2204/install.sh
 
 
 # flatpak: application management tool
