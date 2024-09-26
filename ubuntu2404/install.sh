@@ -9,16 +9,15 @@ echo ""
 
 # install packages
 sudo apt update
-sudo apt install tmux vim zsh git bat curl wget ssh just \
-                 exuberant-ctags ccls \
-                 silversearcher-ag ripgrep \
+sudo apt install tmux vim zsh git tig bat curl wget ssh just \
+                 exuberant-ctags ccls ripgrep \
                  python3-pip pipx
 
 
 # RUST environment setup
 if [ ! -d ~/.cargo ]; then
-  curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
-  source "$HOME/.cargo/env"
+    curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+    source "$HOME/.cargo/env"
 fi
 
 
@@ -39,7 +38,7 @@ pipx install pre-commit
 
 
 # install nvm (This is necessary for vim Coc plugin)
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | bash
 source "$HOME/.nvm/nvm.sh"
 nvm install node
 
@@ -47,6 +46,9 @@ nvm install node
 # vim settings
 rm ~/.vimrc
 ln -s ~/dotfiles/vimrc ~/.vimrc
+if [ "$CLEAN" = "1" ]; then
+    rm -rf ~/.vim
+fi
 if [ ! -d ~/.vim ]; then
   curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
   ln -s ~/dotfiles/coc-settings.json ~/.vim/coc-settings.json
@@ -54,6 +56,9 @@ fi
 
 
 # zsh settings
+if [ "$CLEAN" = "1" ]; then
+    rm -rf ~/.oh-my-zsh
+fi
 if [ ! -d ~/.oh-my-zsh ]; then
   curl -L http://install.ohmyz.sh | sh
   git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
@@ -66,6 +71,9 @@ rm -rf ~/.zsh
 
 
 # fzf: fuzzy finder
+if [ "$CLEAN" = "1" ]; then
+    rm -rf ~/.fzf
+fi
 if [ ! -d ~/.fzf ]; then
   git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
   ~/.fzf/install
