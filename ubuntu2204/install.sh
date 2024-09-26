@@ -82,8 +82,6 @@ cat ranger/rc.conf >> ~/.config/ranger/rc.conf
 
 # Other settings
 echo "other settings ..."
-rm -rf ~/.rsc
-ln -s dotfiles/rsc ~/.rsc
 rm -rf ~/.tmux.conf
 ln -s dotfiles/tmux.conf ~/.tmux.conf
 rm -rf ~/.gitconfig

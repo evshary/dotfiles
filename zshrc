@@ -140,10 +140,6 @@ clean_disk() {
 # Add $HOME directory
 export PATH=$HOME/.local/bin/:$PATH
 
-# Show the ASCII photo of RIN chan
-#cat ~/.rsc/rin.ans
-#echo ""
-
 ## Bugfix for zsh
 ## https://github.com/ros2/ros2cli/issues/534
 #eval "$(register-python-argcomplete3 ros2)"
