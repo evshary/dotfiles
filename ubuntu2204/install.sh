@@ -10,7 +10,7 @@ echo ""
 # install packages
 sudo add-apt-repository ppa:jonathonf/vim # Use the latest vim
 sudo apt update
-sudo apt install tmux vim zsh git tig curl wget ssh \
+sudo apt install tmux vim zsh git tig curl wget ssh htop \
                  exuberant-ctags ccls ripgrep \
                  python3-pip pipx
 
