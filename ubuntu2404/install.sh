@@ -24,6 +24,7 @@ fi
 # Python environment setup
 ## poetry
 curl -sSL https://install.python-poetry.org | python3 -
+export PATH="$HOME/.local/bin:$PATH"
 ### poetry: Always make sure the virtualenv is under the project
 poetry config virtualenvs.in-project true
 ## pyenv
@@ -44,7 +45,7 @@ nvm install node
 
 
 # vim settings
-rm ~/.vimrc
+rm -rf ~/.vimrc
 ln -s ~/dotfiles/vimrc ~/.vimrc
 if [ "$CLEAN" = "1" ]; then
     rm -rf ~/.vim
@@ -65,7 +66,7 @@ if [ ! -d ~/.oh-my-zsh ]; then
     git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
     git clone https://github.com/paulirish/git-open.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/git-open
 fi
-rm ~/.zshrc
+rm -rf ~/.zshrc
 ln -s dotfiles/zshrc ~/.zshrc
 rm -rf ~/.zsh
 
