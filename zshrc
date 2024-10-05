@@ -54,6 +54,7 @@ plugins=(
 alias ggo=git-open # Alias git-open, don't use go to avoid conflicts with golang
 alias vi='vim'
 alias sl='ls'
+alias bat='batcat'
 source $ZSH/oh-my-zsh.sh
 
 # Do not share history for zsh

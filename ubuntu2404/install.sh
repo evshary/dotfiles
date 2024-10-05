@@ -9,7 +9,7 @@ echo ""
 
 # install packages
 sudo apt update
-sudo apt install tmux vim zsh git tig bat curl wget ssh htop just \
+sudo apt install tmux vim zsh git tig bat curl wget ssh htop just ncdu \
                  exuberant-ctags ccls ripgrep \
                  python3-pip pipx
 
