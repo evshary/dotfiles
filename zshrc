@@ -141,6 +141,9 @@ clean_disk() {
 # Add $HOME directory
 export PATH=$HOME/.local/bin/:$PATH
 
+# Export GPG_TTY
+export GPG_TTY=$(tty)
+
 ## Bugfix for zsh
 ## https://github.com/ros2/ros2cli/issues/534
 #eval "$(register-python-argcomplete3 ros2)"
