@@ -15,6 +15,7 @@ sudo apt install tmux vim zsh git tig bat curl wget ssh htop just ncdu \
 
 # GPG configuration
 sudo apt install pinentry-tty
+mkdir -p ~/.gnupg
 echo "pinentry-program /usr/bin/pinentry-tty" >> ~/.gnupg/gpg-agent.conf
 # might need to restart if gpg-agent is running
 #gpgconf --kill gpg-agent
