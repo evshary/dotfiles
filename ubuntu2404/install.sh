@@ -33,6 +33,9 @@ curl -sSL https://install.python-poetry.org | python3 -
 export PATH="$HOME/.local/bin:$PATH"
 ### poetry: Always make sure the virtualenv is under the project
 poetry config virtualenvs.in-project true
+### poetry: Avoid hanging due to the keyring issue
+### https://github.com/python-poetry/poetry/issues/8623
+poetry config keyring.enabled false
 ## pyenv
 if [ ! -d ~/.pyenv ]; then
     curl https://pyenv.run | bash
