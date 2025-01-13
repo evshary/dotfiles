@@ -138,6 +138,25 @@ clean_disk() {
     rm -rf $HOME/.cache/google-chrome/Profile\ 2/Cache/
 }
 
+poetry_new() {
+    if [ $# -eq 0 ]; then
+        echo "Usage:"
+        echo "  poetry_new <your_workspace_name>"
+        return 1
+    fi
+    mkdir -p $1 && cd $1
+    # Init poetry
+    poetry init --no-interaction
+    # Put .venv file under the project
+    poetry config virtualenvs.in-project true
+    # Use the current Python3
+    poetry env use python3
+    # Show usage:
+    echo "Next step:"
+    echo "- Add packages: poetry add <necessary packages>"
+    echo "- Run: poetry run python3 <your Python script>"
+}
+
 # Add $HOME directory
 export PATH=$HOME/.local/bin/:$PATH
 
