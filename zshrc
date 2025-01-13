@@ -138,6 +138,7 @@ clean_disk() {
     rm -rf $HOME/.cache/google-chrome/Profile\ 2/Cache/
 }
 
+# Create poetry new workspace
 poetry_new() {
     if [ $# -eq 0 ]; then
         echo "Usage:"
@@ -153,8 +154,19 @@ poetry_new() {
     poetry env use python3
     # Show usage:
     echo "Next step:"
-    echo "- Add packages: poetry add <necessary packages>"
-    echo "- Run: poetry run python3 <your Python script>"
+    echo "* Add packages: poetry add <necessary packages>"
+    echo "* Run: poetry run python3 <your Python script>"
+}
+
+# Show possible commands
+help() {
+    echo "Here are the possible commands"
+    echo "* upgrade: Upgrade the system"
+    echo "* clean_disk: Clean the cache"
+    echo "* poetry_new: Create Python3 poetry workspace"
+    echo "* rf: User-friendly file system viewer"
+    echo "* f: Find files easily"
+    echo "* bat: Show file content"
 }
 
 # Add $HOME directory
