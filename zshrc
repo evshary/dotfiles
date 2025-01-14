@@ -155,6 +155,7 @@ poetry_new() {
     # Show usage:
     echo "Next step:"
     echo "* Add packages: poetry add <necessary packages>"
+    echo "* Add dev packages: poetry add --group dev <necessary packages>"
     echo "* Run: poetry run python3 <your Python script>"
 }
 
@@ -171,6 +172,7 @@ poetry_add() {
     # Show usage:
     echo "Next step:"
     echo "* Add packages: poetry add <necessary packages>"
+    echo "* Add dev packages: poetry add --group dev <necessary packages>"
     echo "* Run: poetry run python3 <your Python script>"
 }
 
