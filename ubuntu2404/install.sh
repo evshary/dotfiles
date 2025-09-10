@@ -9,7 +9,7 @@ echo ""
 
 # install packages
 sudo apt update
-sudo apt install tmux vim zsh git tig bat curl wget ssh htop just ncdu \
+sudo apt install tmux vim zsh git tig bat curl wget ssh htop ncdu \
                  exuberant-ctags ccls ripgrep \
                  python3-pip pipx
 
@@ -26,6 +26,10 @@ if [ ! -d ~/.cargo ]; then
     source "$HOME/.cargo/env"
 fi
 
+# Install just
+# The version installed by apt is outdated in Ubuntu 24.04 and didn't support auto-completions.
+# We need to build from the source code.
+cargo install just
 
 # Python environment setup
 ## poetry
