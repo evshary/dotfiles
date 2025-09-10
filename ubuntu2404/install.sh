@@ -26,10 +26,12 @@ if [ ! -d ~/.cargo ]; then
     source "$HOME/.cargo/env"
 fi
 
-# Install just
-# The version installed by apt is outdated in Ubuntu 24.04 and didn't support auto-completions.
-# We need to build from the source code.
-cargo install just
+# Install cargo-binstall
+cargo install cargo-binstall
+## Install just
+## The version installed by apt is outdated in Ubuntu 24.04 and didn't support auto-completions.
+## We need to build from the source code.
+cargo binstall --no-track -y just
 
 # Python environment setup
 ## poetry
