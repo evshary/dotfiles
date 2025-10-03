@@ -116,8 +116,7 @@ upgrade() {
     pushd $HOME/dotfiles > /dev/null && git pull && popd > /dev/null
     sudo apt update && sudo apt upgrade && sudo apt autoremove
     pipx upgrade-all
-    poetry self update
-    pyenv update
+    uv self update
     rustup update
 }
 
@@ -138,51 +137,11 @@ clean_disk() {
     rm -rf $HOME/.cache/google-chrome/Profile\ 2/Cache/
 }
 
-# Create new workspace with poetry.
-poetry_new() {
-    if [ $# -eq 0 ]; then
-        echo "Usage:"
-        echo "  poetry_new <your_workspace_name>"
-        return 1
-    fi
-    mkdir -p $1 && cd $1
-    # Init poetry
-    poetry init --no-interaction
-    # Put .venv file under the project
-    poetry config virtualenvs.in-project true
-    # Use the current Python3
-    poetry env use python3
-    # Show usage:
-    echo "Next step:"
-    echo "* Add packages: poetry add <necessary packages>"
-    echo "* Add dev packages: poetry add --group dev <necessary packages>"
-    echo "* Run: poetry run python3 <your Python script>"
-}
-
-# Add poetry to existing workspace
-poetry_add() {
-    # Init poetry
-    poetry init --no-interaction
-    # Put .venv file under the project
-    poetry config virtualenvs.in-project true
-    # Use the current Python3
-    poetry env use python3
-    # Install requirements.txt
-    poetry add $(cat requirements.txt)
-    # Show usage:
-    echo "Next step:"
-    echo "* Add packages: poetry add <necessary packages>"
-    echo "* Add dev packages: poetry add --group dev <necessary packages>"
-    echo "* Run: poetry run python3 <your Python script>"
-}
-
 # Show possible commands
 help() {
     echo "Here are the possible commands"
     echo "* upgrade: Upgrade the system"
     echo "* clean_disk: Clean the cache"
-    echo "* poetry_new: Create a workspace with poetry"
-    echo "* poetry_add: Add poetry to a existing Python workspace"
     echo "* rf: User-friendly file system viewer"
     echo "* f: Find files easily"
     echo "* bat: Show file content"
