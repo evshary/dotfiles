@@ -101,6 +101,8 @@ ln -s dotfiles/tmux.conf ~/.tmux.conf
 rm -rf ~/.gitconfig
 ln -s dotfiles/gitconfig ~/.gitconfig
 
+# Install AI-related settings
+./ai/install_skills.sh
 
 echo ""
 echo "======== Basic dotfiles installation is done ======="
