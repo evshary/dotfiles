@@ -1,9 +1,13 @@
 #!/bin/bash
 
-# antigravity
+# google
+## antigravity
 mkdir -p ~/.gemini/antigravity
 rm -rf ~/.gemini/antigravity/skills
 ln -s ~/dotfiles/ai/ai-skills ~/.gemini/antigravity/skills
+## gemini
+rm -rf ~/.gemini/skills
+ln -s ~/dotfiles/ai/ai-skills ~/.gemini/skills
 
 # claude code / cursor
 mkdir -p ~/.claude

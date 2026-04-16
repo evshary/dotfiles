@@ -102,6 +102,10 @@ rm -rf ~/.gitconfig
 ln -s dotfiles/gitconfig ~/.gitconfig
 
 # Install AI-related settings
+## Install CLI
+npm install -g @openai/codex
+npm install -g @google/gemini-cli
+## Install skills
 ./ai/install_skills.sh
 
 echo ""
