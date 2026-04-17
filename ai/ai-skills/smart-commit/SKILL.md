@@ -26,7 +26,9 @@ Before committing, present a plan to the user:
 ## Phase 3: Execution
 For each logical group:
 1.  Stage the specific files (or hunks) using `git add <file>`.
-2.  Execute `git commit -m "<message>"`.
+2.  Execute `git commit -s -S -m "<message>"`. 
+    - *Note*: If GPG requires a passphrase, remind the user they can press `tab` to focus the shell and provide input.
+    - *Troubleshooting*: If the commit fails due to a GPG timeout, ask the user to run `echo "test" | gpg --clearsign` to unlock the GPG agent first.
 3.  Verify the commit was successful.
 
 ## Guidelines
