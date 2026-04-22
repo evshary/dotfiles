@@ -20,28 +20,35 @@ You are an expert at technical communication and documentation. Your goal is to 
 
 ### 3. Generate PR Description
 A well-structured PR description should include:
-- **Summary**: A high-level overview of *what* was changed and *why*.
-- **Key Changes**: A bulleted list of significant technical changes.
-- **Testing**: Briefly mention how the changes were verified (if info is available in history).
+- **Summary**: A high-level overview of the PR.
+- **What does this PR do?**: A bulleted list of significant technical changes.
+- **Why is this change needed?**: Explain the motivation, problem being solved, or the value this PR provides.
+- **Testing**: Briefly mention how the changes were verified.
 - **Related Issues**: Mention any issue numbers if found in commit messages.
 
 ## Guidelines
+- **Output Format**: ALWAYS provide the final PR title and description in valid Markdown format.
 - **Be Concise**: Avoid fluff. Focus on technical impact.
 - **Categorize**: Group changes by component or functionality (e.g., UI, Backend, Documentation).
 - **Highlight Breaking Changes**: Clearly call out any backwards-incompatible changes.
 - **User Tone**: Match the existing documentation style of the project.
 
-## Example Output
+## Example Output (Markdown)
 
-**Title:** `feat(ai): add summarize-pr skill`
+```markdown
+# Title: feat(ai): add summarize-pr skill
 
-**Description:**
+## Description
 This PR introduces a new AI skill `summarize-pr` to help automate the generation of PR titles and descriptions.
 
-### Key Changes
+### What does this PR do?
 - Added `summarize-pr` skill directory under `ai/ai-skills/`.
 - Implemented `SKILL.md` with a structured workflow for PR analysis and generation.
 - Included guidelines for high-quality technical summaries.
 
+### Why is this change needed?
+Manually writing PR descriptions is time-consuming and often lacks consistency. This skill ensures all PRs have a high-quality, structured summary that follows project standards, improving code review efficiency.
+
 ### Testing
 - Verified skill initialization and structure.
+```
