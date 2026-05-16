@@ -106,7 +106,7 @@ ln -s dotfiles/gitconfig ~/.gitconfig
 npm install -g @openai/codex
 npm install -g @google/gemini-cli
 ## Install skills
-./ai/install_skills.sh
+./ai/install.sh
 
 echo ""
 echo "======== Basic dotfiles installation is done ======="
