@@ -91,8 +91,17 @@ f() {
         --preview 'file {}' --preview-window up,1,border-horizontal \
         --color 'fg:#bbccdd,fg+:#ddeeff,bg:#334455,preview-bg:#223344,border:#778899'
 }
-# Source environmental variables
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+# Load fzf integration in a way that works with both upstream and Debian/Ubuntu packages.
+if command -v fzf >/dev/null 2>&1; then
+    if fzf --zsh >/dev/null 2>&1; then
+        source <(fzf --zsh)
+    else
+        [ -f /usr/share/doc/fzf/examples/completion.zsh ] && source /usr/share/doc/fzf/examples/completion.zsh
+        [ -f /usr/share/doc/fzf/examples/key-bindings.zsh ] && source /usr/share/doc/fzf/examples/key-bindings.zsh
+        [ -f /usr/share/fzf/shell/completion.zsh ] && source /usr/share/fzf/shell/completion.zsh
+        [ -f /usr/share/fzf/shell/key-bindings.zsh ] && source /usr/share/fzf/shell/key-bindings.zsh
+    fi
+fi
 
 # ranger setting
 # j/k: up / down
