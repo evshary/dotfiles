@@ -178,3 +178,22 @@ eval "$(just --completions zsh)"
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+
+
+# Added by Antigravity CLI installer
+export PATH="/home/evshary/.local/bin:$PATH"
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/home/evshary/google-cloud-sdk/path.zsh.inc' ]; then . '/home/evshary/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/home/evshary/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/evshary/google-cloud-sdk/completion.zsh.inc'; fi
+
+# >>> Codex installer >>>
+export PATH="/home/evshary/.local/bin:$PATH"
+# <<< Codex installer <<<
+
+# OCI
+export PATH="/home/evshary/lib/oracle-cli/bin:$PATH"
+[[ -e "/home/evshary/lib/oracle-cli/lib/python3.12/site-packages/oci_cli/bin/oci_autocomplete.sh" ]] && source "/home/evshary/lib/oracle-cli/lib/python3.12/site-packages/oci_cli/bin/oci_autocomplete.sh"
+
