@@ -13,6 +13,11 @@ sudo apt install tmux vim zsh git tig bat curl wget ssh htop ncdu \
                  exuberant-ctags ccls ripgrep \
                  python3-pip pipx
 
+# git configuration
+git config --global user.email "evshary@gmail.com"
+git config --global user.name "ChenYing Kuo"
+git config --global core.editor "vim"
+
 # GPG configuration
 sudo apt install pinentry-tty
 mkdir -p ~/.gnupg
