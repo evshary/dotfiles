@@ -17,10 +17,6 @@ echo ""
 sudo apt install -y flatpak
 
 
-# SDKMAN: sdk management tool
-curl -fsS "https://get.sdkman.io" | bash
-
-
 # docker without sudo privilege
 sudo apt install -y docker.io
 getent group docker >/dev/null || sudo groupadd docker

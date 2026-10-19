@@ -53,11 +53,6 @@ if [ "${INSTALL_FULL:-0}" = "1" ]; then
     flatpak --version
     docker --version
     id -nG "$(id -un)" | grep -w docker
-    # SDKMAN's init script expects an interactive-style environment.
-    set +e
-    source "$HOME/.sdkman/bin/sdkman-init.sh"
-    set -e
-    sdk version
 fi
 
 echo 'Installation smoke checks passed.'
