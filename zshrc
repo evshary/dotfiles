@@ -197,3 +197,24 @@ export PATH="/home/evshary/.local/bin:$PATH"
 export PATH="/home/evshary/lib/oracle-cli/bin:$PATH"
 [[ -e "/home/evshary/lib/oracle-cli/lib/python3.12/site-packages/oci_cli/bin/oci_autocomplete.sh" ]] && source "/home/evshary/lib/oracle-cli/lib/python3.12/site-packages/oci_cli/bin/oci_autocomplete.sh"
 
+# compinit
+autoload -Uz compinit
+compinit
+
+## juju
+_juju() {
+  if (( CURRENT == 2 )); then
+    local -a commands
+    commands=("${(@f)$(juju help commands 2>/dev/null | awk '{print $1}')}")
+    _describe 'Juju command' commands
+  fi
+}
+compdef _juju juju
+
+
+## Canonical
+export DEBFULLNAME="ChenYing Kuo"
+export DEBEMAIL="chenying.kuo@canonical.com"
+
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

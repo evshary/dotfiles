@@ -105,6 +105,10 @@ rm -rf ~/.tmux.conf
 ln -s dotfiles/tmux.conf ~/.tmux.conf
 rm -rf ~/.gitconfig
 ln -s dotfiles/gitconfig ~/.gitconfig
+rm -rf ~/.gitconfig-canonical
+ln -s dotfiles/gitconfig-canonical ~/.gitconfig-canonical
+rm -rf ~/.devscripts
+ln -s dotfiles/devscripts ~/.devscripts
 
 # Install AI-related settings
 ## Install CLI

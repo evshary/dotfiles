@@ -1,6 +1,7 @@
 [user]
     email = evshary@gmail.com
     name = ChenYing Kuo
+    signingkey = 64505FF49E05899A813F98BE09A653CE2C0D71A1
 [core]
     editor = vim
 [alias]
@@ -10,3 +11,5 @@
     co = checkout
 [rerere]
 	enabled = true
+[includeIf "gitdir:~/ws_canonical/"]
+    path = ~/.gitconfig-canonical
