@@ -43,3 +43,38 @@ To test only the basic installer, add `--build-arg INSTALL_FULL=0`.
 
 Docker checks installation and CLI startup. Login behavior, desktop applications,
 and Docker daemon operation still need a VM or a real Ubuntu installation.
+
+## Back up and restore keys and shell history
+
+Requires Python 3. Backups contain `.ssh/`, `.gnupg/`, `.bash_history`, and
+`.zsh_history` from your home directory, when present. Before backing up or
+restoring, close other shell sessions and applications that use these files.
+Save pending history in your current shell with `history -a` (Bash) or `fc -AI`
+(zsh), then exit that shell before restoring to avoid overwriting restored history.
+
+```shell
+# Create backup/dotfiles-backup-<timestamp>.tar.gz in this repository.
+./scripts/export.sh
+# Optionally choose a different output directory.
+./scripts/export.sh /path/to/backups
+# Restore a specific archive.
+./scripts/import.sh /path/to/backups/dotfiles-backup-<timestamp>.tar.gz
+```
+
+Archives are **not encrypted** and have mode `600`. They preserve regular files,
+directories, permissions, and modification times. Sockets and GPG lock/temporary
+files are excluded; symlinks and other special files are rejected explicitly.
+Only standard `.ssh` and `.gnupg` locations are supported; hardware-token secrets
+and keys stored elsewhere are not copied.
+
+Restore validates the entire archive before replacing anything. Existing targets
+are moved into a private `~/.dotfiles-before-restore-*` directory, and unrelated
+files stay in place. Restored `.ssh/` and `.gnupg/` directories use mode `700`;
+history files use mode `600`. Check the restored data before deleting the saved
+originals. Archives from the old GPG-only export script are not supported.
+
+To run the backup tests with disposable data:
+
+```shell
+python3 scripts/test_backup.py
+```
