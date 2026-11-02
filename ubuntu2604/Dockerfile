@@ -12,11 +12,6 @@ COPY --chown=tester:tester . /home/tester/dotfiles
 USER tester
 ENV HOME=/home/tester
 WORKDIR /home/tester/dotfiles
-ARG INSTALL_FULL=1
-RUN if [ "$INSTALL_FULL" = "1" ]; then \
-        ./ubuntu2604/install_full.sh; \
-    else \
-        ./ubuntu2604/install.sh; \
-    fi
-RUN INSTALL_FULL="$INSTALL_FULL" ./ubuntu2604/verify.sh
+RUN ./ubuntu2604/install.sh
+RUN ./ubuntu2604/verify.sh
 CMD ["/bin/bash"]

@@ -9,10 +9,7 @@ You can use it to set the tools below
 
    ```shell
    # Ubuntu 26.04 (use ubuntu2404 for Ubuntu 24.04)
-   # Basic
    ./ubuntu2604/install.sh
-   # Full (Package management / docker)
-   ./ubuntu2604/install_full.sh
    ```
 
 2. Change the shell: `chsh -s /bin/zsh`.
@@ -34,12 +31,10 @@ Run one command from the repository root:
 docker build --progress=plain -f ubuntu2604/Dockerfile -t dotfiles:26.04 .
 ```
 
-This runs the full installer as a non-root user, including Rust, and automatically
+This runs the installer as a non-root user, including Rust, and automatically
 checks installed commands, shell configuration, and configuration links.
 Rust download progress is displayed during the build.
 It requires internet access and does not change your host configuration.
-
-To test only the basic installer, add `--build-arg INSTALL_FULL=0`.
 
 Docker checks installation and CLI startup. Login behavior, desktop applications,
 and Docker daemon operation still need a VM or a real Ubuntu installation.

@@ -11,7 +11,7 @@ if [ "$DOTFILES_DIR" != "$HOME/dotfiles" ]; then
 fi
 export PATH="$HOME/.local/bin:$HOME/.cargo/bin:$PATH"
 
-echo "======== Start to install basic dotfiles configuration ========"
+echo "======== Start to install dotfiles configuration ========"
 echo ""
 
 
@@ -124,5 +124,13 @@ ln -s "$DOTFILES_DIR/ai/ai-skills" ~/.copilot/skills
 rm -rf ~/.copilot/copilot-instructions.md
 ln -s "$DOTFILES_DIR/ai/AGENTS.md" ~/.copilot/copilot-instructions.md
 
+# Flatpak: application management tool
+sudo apt install -y flatpak
+
+# Docker without sudo privilege (takes effect after logging in again)
+sudo apt install -y docker.io
+getent group docker >/dev/null || sudo groupadd docker
+sudo usermod -aG docker "$(id -un)"
+
 echo ""
-echo "======== Basic dotfiles installation is done ======="
+echo "======== Dotfiles installation is done ======="

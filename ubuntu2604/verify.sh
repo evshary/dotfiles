@@ -50,10 +50,8 @@ source "$HOME/.cargo/env"
 rustc --version
 cargo --version
 
-if [ "${INSTALL_FULL:-0}" = "1" ]; then
-    flatpak --version
-    docker --version
-    id -nG "$(id -un)" | grep -w docker
-fi
+flatpak --version
+docker --version
+id -nG "$(id -un)" | grep -w docker
 
 echo 'Installation smoke checks passed.'
