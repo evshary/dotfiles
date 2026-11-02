@@ -7,7 +7,7 @@ source "$HOME/.nvm/nvm.sh"
 
 for command in tmux vim zsh git tig batcat curl wget ssh htop ncdu ctags \
                clangd rg python3 pipx pinentry-tty just uv ruff pre-commit \
-               ranger node npm codex gemini fzf; do
+               ranger node npm codex copilot fzf; do
     command -v "$command"
 done
 
@@ -24,12 +24,13 @@ ranger --version
 node --version
 npm --version
 codex --version
-gemini --version
+copilot --version
 fzf --version
 
 for config in .vimrc .zshrc .tmux.conf .gitconfig .gitconfig-canonical \
               .devscripts .vim/coc-settings.json .codex/skills .codex/AGENTS.md \
-              .gemini/skills .gemini/GEMINI.md .claude/skills .claude/CLAUDE.md; do
+              .gemini/antigravity/skills .gemini/skills .gemini/GEMINI.md .claude/skills .claude/CLAUDE.md \
+              .copilot/skills .copilot/copilot-instructions.md; do
     test -L "$HOME/$config"
     test -e "$HOME/$config"
 done

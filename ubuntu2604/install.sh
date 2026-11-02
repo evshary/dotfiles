@@ -114,9 +114,15 @@ ln -s dotfiles/devscripts ~/.devscripts
 # Install AI-related settings
 ## Install CLI
 npm install -g @openai/codex
-npm install -g @google/gemini-cli
+npm install -g @github/copilot
 ## Install skills
 ./ai/install.sh
+## GitHub Copilot personal skills and instructions
+mkdir -p ~/.copilot
+rm -rf ~/.copilot/skills
+ln -s "$DOTFILES_DIR/ai/ai-skills" ~/.copilot/skills
+rm -rf ~/.copilot/copilot-instructions.md
+ln -s "$DOTFILES_DIR/ai/AGENTS.md" ~/.copilot/copilot-instructions.md
 
 echo ""
 echo "======== Basic dotfiles installation is done ======="
