@@ -17,7 +17,7 @@ echo ""
 
 # install packages
 sudo apt update
-sudo apt install -y tmux vim zsh git tig bat curl wget ssh htop ncdu \
+sudo apt install -y tmux vim zsh git tig bat curl wget ssh htop ncdu tree \
                  universal-ctags clangd just ripgrep build-essential ca-certificates unzip zip \
                  python3-pip pipx
 
