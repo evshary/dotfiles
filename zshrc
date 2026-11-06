@@ -211,6 +211,10 @@ _juju() {
 }
 compdef _juju juju
 
+## snapcraft
+autoload -U +X bashcompinit && bashcompinit
+source /snap/snapcraft/current/completion.sh
+
 
 ## Canonical
 export DEBFULLNAME="ChenYing Kuo"
