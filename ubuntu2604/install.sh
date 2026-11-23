@@ -128,7 +128,7 @@ ln -s "$DOTFILES_DIR/ai/AGENTS.md" ~/.copilot/copilot-instructions.md
 sudo apt install -y flatpak
 
 # Docker without sudo privilege (takes effect after logging in again)
-sudo apt install -y docker.io
+sudo apt install -y docker.io docker-compose-v2
 getent group docker >/dev/null || sudo groupadd docker
 sudo usermod -aG docker "$(id -un)"
 

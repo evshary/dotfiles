@@ -52,6 +52,7 @@ cargo --version
 
 flatpak --version
 docker --version
+docker compose version
 id -nG "$(id -un)" | grep -w docker
 
 echo 'Installation smoke checks passed.'
