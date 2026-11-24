@@ -223,4 +223,8 @@ export DEBFULLNAME="ChenYing Kuo"
 export DEBEMAIL="chenying.kuo@canonical.com"
 
 
+# opencode
+export PATH=/home/chenying.kuo@canonical.com/.opencode/bin:$PATH
+
+
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
