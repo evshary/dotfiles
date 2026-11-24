@@ -13,3 +13,5 @@
 	enabled = true
 [includeIf "gitdir:~/ws_canonical/"]
     path = ~/.gitconfig-canonical
+[color]
+    ui = auto
